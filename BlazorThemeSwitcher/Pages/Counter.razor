@@ -1,0 +1,52 @@
+﻿@page "/counter"
+
+@using Syncfusion.Blazor.Grids
+
+            <SfGrid DataSource="@Subscriptions" AllowPaging="true">
+
+                <GridPageSettings PageSize="5"></GridPageSettings>   
+                <GridColumns>
+
+        <GridColumn Field=@nameof(Subs.OrderID) HeaderText="Subscription Type" IsPrimaryKey="true" TextAlign="TextAlign.Center" Width="120"></GridColumn>
+        <GridColumn Field=@nameof(Subs.OrderDate) HeaderText="Subscription End Date" EditType="EditType.DatePickerEdit" Format="d" Width="120" TextAlign="TextAlign.Center"></GridColumn>
+        <GridColumn Field=@nameof(Subs.CustomerID) HeaderText=" Strategy Limit" TextAlign="TextAlign.Center" Width="120"></GridColumn>
+        <GridColumn Field=@nameof(Subs.Freight) HeaderText="Account Limit" Format="C2" TextAlign="TextAlign.Center" Width="120"></GridColumn>
+        <GridColumn HeaderText="Actions" TextAlign="TextAlign.Center" Width="120">
+            <Template>
+                                    <SfButton CssClass="e-info">Pay</SfButton>                
+                                </Template>
+                            </GridColumn>
+                        </GridColumns>
+
+                    </SfGrid>
+
+@code {
+    public List<Subs> Subscriptions { get; set; }
+    protected override void OnInitialized()
+    {
+        Subscriptions = Enumerable.Range(0,1).Select(x => new Subs()
+            {
+                OrderID = 1000 + x,
+                CustomerID = (new string[] { "ALFKI", "ANANTR", "ANTON", "BLONP", "BOLID" })[new Random().Next(5)],
+                Freight = 2.1 * x,
+                OrderDate = DateTime.Now.AddDays(-x),
+                ShipCountry = (new string[] { "USA", "UK", "CHINA", "RUSSIA", "INDIA" })[new Random().Next(5)]
+            }).ToList();
+    }
+
+    public class Subs
+    {
+        public int? OrderID { get; set; }
+        public string CustomerID { get; set; }
+        public DateTime? OrderDate { get; set; }
+        public double? Freight { get; set; }
+        public string ShipCountry { get; set; }
+    }
+                    }
+
+
+<style>
+    .e-info {
+        border-radius: 5px;
+    }
+</style>

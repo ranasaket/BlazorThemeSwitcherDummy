@@ -1,0 +1,451 @@
+﻿@layout MainLayout
+@page "/createbroker"
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Cards
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.SplitButtons 
+
+<div class="container">
+    <div class="row mb-2">
+        <div class="col-lg-12 mt-lg-4 mt-4">
+            <SfCard style="border-radius:10px;">
+                <CardContent>
+                <div class="row">
+                    <div class="col-sm-4 col-lg-2 ">
+                        <div class="avatar avatar-xl position-relative">
+                            <img src="/css/img/team-3.jpg" alt="bruce" class="w-100 border-radius-lg shadow-sm">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-6 ">
+                        <h5 class=" text-dark mb-1 text-lg-start m-3" style="font-family:'Times New Roman';">
+                                Create Account
+                            </h5>
+                        </div>
+               
+                        </div>
+                </CardContent>
+                        </SfCard>
+                        </div>
+                        </div>
+                       
+
+ <div class="row mb-2">
+
+    <div class="col-lg-12">
+
+            <SfCard style="border-radius:10px;">
+                <CardContent>
+                <div class="row">
+                    <div class="col-lg-4 col-6 mt-lg-2 mx-4">
+        <div class="form-group">
+
+                            <select class="form-control form-control-flush w-100">
+                                   <option value="alice">Select Broker</option>
+                                   <option value="alice">Alice Blue</option>
+                                <option value="angel">Angel</option>
+                                <option value="zerodha">Zerodha</option>
+                                <option value="finvasia">Finvasia</option>
+
+                            </select>
+                            
+                        </div>
+                </div>
+
+
+                    <div class="alice box">
+                        <form>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        
+                                        <div class="form-group input-group-outline mb-3">
+                                            <SfTextBox CssClass="e-outline" Placeholder="User Name"></SfTextBox>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                                            <SfTextBox CssClass="e-outline" Placeholder="Password"  Type="InputType.Password"></SfTextBox>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                                             <SfTextBox CssClass="e-outline" Placeholder="TOTP QRCode"></SfTextBox>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                                            <SfTextBox CssClass="e-outline" Placeholder="API Secret" ></SfTextBox>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3 w-100">
+                                            <SfTextBox CssClass="e-outline" Placeholder="Year of Birth" Type="InputType.Number"
+                                            min="1950" max="2015"></SfTextBox>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="finvasia box">
+                        <form>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                    <SfTextBox CssClass="e-outline" Placeholder="User Name" ></SfTextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                                            <SfTextBox CssClass="e-outline" Placeholder="Password"  Type="InputType.Password"></SfTextBox>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                                            <SfTextBox CssClass="e-outline" Placeholder="IMEI" ></SfTextBox>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                                            <SfTextBox CssClass="e-outline" Placeholder="API Key" ></SfTextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                                            <SfTextBox CssClass="e-outline" Placeholder="TOTP QRCode" ></SfTextBox>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="angel box">
+                        <form>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                                            <SfTextBox CssClass="e-outline" Placeholder="User Name" ></SfTextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                                            <SfTextBox CssClass="e-outline" Placeholder="Password" Type="InputType.Password" ></SfTextBox>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                                            <SfTextBox CssClass="e-outline" Placeholder="API key" ></SfTextBox>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="control-section">
+                                            <div class="radio-control" style="margin:0;">
+                                                
+                                                    <SfRadioButton Label="TOTP QRCode" Name="demo" Value="One" Checked="@checkedValue"></SfRadioButton>
+                          
+                                                    <SfRadioButton Label="PIN" Name="demo" Value="Two" Checked="@checkedValue"></SfRadioButton>
+                                                
+                                            </div>
+                                         </div>
+                                    </div>
+
+
+
+                                    <div class="col-lg-6">
+
+                                        <div id="showOne" class="myDiv">
+                                            <div class="form-group input-group-outline mb-3">
+                                                <SfTextBox CssClass="e-outline" Placeholder="TOTP QRCode" ></SfTextBox>
+                                            </div>
+                                        </div>
+
+                                        <div id="showTwo" class="myDiv" style="display:none;">
+                                            <div class="form-group input-group-outline mb-3">
+                                                <SfTextBox CssClass="e-outline" Placeholder="PIN" Type="InputType.Password"></SfTextBox>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-lg-6 text-start  justify-content-start align-self-start">
+                                        <SfButton CssClass="e-info">Authorize</SfButton>
+                                      
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="zerodha box">
+                        <form>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                                            <SfTextBox CssClass="e-outline" Placeholder="User Name"></SfTextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                                            <SfTextBox CssClass="e-outline" Placeholder="Password" Type="InputType.Password" ></SfTextBox>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                                            <SfTextBox CssClass="e-outline" Placeholder="API key" ></SfTextBox>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group input-group-outline mb-3">
+                                            <SfTextBox CssClass="e-outline" Placeholder="API Secret Key"></SfTextBox>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-lg-6">
+                                        <div class="control-section">
+                                            <div class="radio-control" style="margin:0;">
+                                                <SfRadioButton Label="TOTP QRCode" Name="code" Value="Three" Checked="@checkedValue"></SfRadioButton>
+                                                <SfRadioButton Label="PIN" Name="code" Value="Four" Checked="@checkedValue"></SfRadioButton>
+
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+
+                                        <div id="showThree" class="myDiv">
+                                            <div class="form-group input-group-outline mb-3">
+                                                <SfTextBox CssClass="e-outline" Placeholder="TOTP QRCode" ></SfTextBox>
+                                            </div>
+                                        </div>
+
+                                        <div id="showFour" class="myDiv" style="display:none;">
+                                            <div class="form-group input-group-outline mb-3">
+                                                <SfTextBox CssClass="e-outline" Placeholder="PIN"></SfTextBox>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-lg-6 text-start justify-content-start align-self-start">
+                                        <SfButton CssClass="e-info">Authorize</SfButton>
+                                    </div>
+                                
+                                </div>
+                            </div>
+
+                        </form>
+
+
+
+                    </div>
+
+
+                </div>
+               
+
+            <hr class="horizontal dark" />
+            <div class="col-12">
+                 <SfButton CssClass="e-info" style="margin-left:3px;">Verify</SfButton>
+                    <SfButton CssClass="e-danger" style="margin-left:3px;">Save Changes</SfButton>
+                
+                
+                </div>
+                </CardContent>
+                </SfCard>
+
+                </div>
+                </div>
+
+    <div class="row mb-2">
+
+        <div class="col-lg-12">
+
+                <SfCard style="border-radius:10px;">
+                    <CardContent>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h5 style="font-family:'Times New Roman', Times, serif;">Advance Configurations</h5>
+                    </div>
+
+
+                        <div class="col-lg-12">
+                        <div class="row text-start justify-content-start mx-2">
+                                <div class="col-lg-6">
+                                    <div class="form-group input-group-outline mb-3">
+                                        <label for="example-text-input" class="form-control-label" style="font-weight:normal;"> Send Alert when Loss Hits: 10,000</label>
+                                        <SfTextBox CssClass="e-outline" Placeholder="pnl_loss_threshold"></SfTextBox>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group input-group-outline mb-3">
+                                        <label for="example-text-input" class="form-control-label" style="font-weight:normal;"> Send Alert when Profit Hits: 10,000</label>
+                                        <SfTextBox CssClass="e-outline" Placeholder="pnl_profit_threshold"></SfTextBox>
+                                    </div>
+                                </div>
+
+
+
+                        </div>
+                    </div>
+
+
+
+                        <div class="col-lg-4">
+                            <div class="form-check form-switch" style="margin-left:0px;padding-left:0px;">
+                                <SfSwitch @bind-Checked="@isChecked"></SfSwitch>
+
+                                <label style="margin-left:15px; font-weight:normal;">
+                            Squareoff_on_loss (Square-off when Loss Threshold is Hit)
+                        </label>
+
+                    </div>
+                    </div>
+
+
+                        <div class="col-lg-4 ">
+                            <div class="form-check form-switch" style="margin-left:0px;padding-left:0px;">
+                                <SfSwitch @bind-Checked="@isChecked" >
+                                
+                                </SfSwitch>
+                        
+                            <label style="margin-left:15px;font-weight:normal;">
+
+                            Squareoff_on_profit (Square-off when Profit Threshold is Hit)
+                        </label>
+                            </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                            <div class="form-check form-switch" style="margin-left:0px;padding-left:0px;">
+                                <SfSwitch @bind-Checked="@isChecked"> </SfSwitch>
+                                <label style="margin-left:15px;font-weight:normal;">
+                           Subscribe to Daily Trading Account PNL Summary
+
+                        </label>
+
+                    </div>
+
+
+                </div>
+                </div>
+
+                                    </CardContent>
+
+                </SfCard>
+
+
+        </div>
+    </div>
+
+</div>
+@code{
+ 
+  private string checkedValue = "One";
+    private bool isChecked = true;
+}
+
+
+<style>
+    .radio-control {
+        margin: 5% 0 5% 40%;
+    }
+
+    @@media only screen and (max-width: 700px) {
+        .radio-control {
+            margin-left: 35%;
+            margin-top: 8%;
+        }
+
+        .control-section {
+            min-height: 200px;
+        }
+    }
+
+    @@media only screen and (max-width: 500px) {
+        .radio-control {
+            margin-top: 20%;
+            margin-left: 2%;
+            margin-bottom: 27%;
+        }
+    }
+
+    .control-section .row {
+        margin: 20px 0;
+    }
+
+    .e-bigger .radio-control h4 {
+        font-size: 20px;
+    }
+
+    .switch-control div {
+        display: block;
+        align-items: flex-start;
+    }
+
+    .switch-control {
+        margin-left: 0;
+        
+    }
+
+    .e-input-group.e-outline 
+    {
+        border-radius:8px;
+        
+    }
+    .e-input:not(:valid){
+        border-radius: 15px;
+    }
+
+        .switch-control label {
+            -webkit-tap-highlight-color: transparent;
+            cursor: pointer;
+            user-select: none;
+            font-weight: normal;
+            font-size: 13px;
+        }
+
+.e-info{
+border-radius:5px;
+height:45px;
+width:100px;
+}
+.e-danger{
+border-radius:5px;
+height:45px;
+}
+e-switch
+{
+margin-left:0px;
+}
+
+
+</style>

@@ -1,0 +1,945 @@
+﻿@page "/createstrategy"
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Data
+
+@using Syncfusion.Blazor.Grids
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+<h5> Create Algo</h5>
+
+        </div>
+        <div class="col-lg-4 mt-4">
+            <label style="font-size:12px;">Algo Name</label>
+            <SfTextBox ></SfTextBox>
+        </div>
+        <div class="col-12">
+            <h6 class="text-uppercase mt-4">Positions</h6>
+            <div class="row">
+                <div class="col-lg-2">
+                    <label style="font-size:12px;">Instrument</label>
+                    <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="350px" Placeholder="Select" DataSource="@LocalData">
+                        <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                    </SfDropDownList>
+                </div>
+
+                <div class="col-lg-2">
+                    <label style="font-size:12px;">Segment</label>
+                    <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="350px" Placeholder="Select" DataSource="@LocalData2">
+                        <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                    </SfDropDownList>
+                </div>
+                <div class="col-lg-1">
+                    <label style="font-size:12px;">Options</label>
+                    <SfSwitch CssClass="handle-text" @bind-Checked="isHandleChecked"></SfSwitch>
+                </div>
+                <div class="col-lg-1">
+                    <label style="font-size:12px;">Buy/Sell</label>
+                    <SfSwitch CssClass="handle-text" @bind-Checked="isHandleChecked"></SfSwitch>
+                </div>
+                <div class="col-lg-2">
+                    <label style="font-size:12px;">Strike</label>
+                    <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="350px" Placeholder="Select" DataSource="@LocalData3">
+                        <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                    </SfDropDownList>
+                </div>
+                <div class="col-lg-1">
+                    <label style="font-size:12px;">Quantity</label>
+                    <SfTextBox />
+
+                </div> 
+                
+                <div class="col-lg-2 mt-4">
+                    
+                    <SfButton CssClass="e-primary">Add Leg</SfButton>
+
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-3">
+                    <SfCheckBox @bind-Checked="@isChecked">Move SL to Cost</SfCheckBox>  
+                 </div>
+                <div class="col-lg-3">
+                <SfCheckBox @bind-Checked="@isChecked">Wait & Trade</SfCheckBox>
+                </div>
+                    <div class="col-lg-3">
+                        <SfCheckBox @bind-Checked="@isChecked">Re-entry/Re-execute</SfCheckBox>
+            </div>
+            </div>
+
+            <div class="row mt-4">
+            <div class="col-lg-1">
+                    <label style="font-size:12px;">Underlying</label>
+                <SfButton CssClass="e-primary">Spot</SfButton>
+
+            </div>
+            <div class="col-lg-1">
+                    <label style="font-size:12px;">Trade type</label>
+                    <SfSwitch CssClass="handle-text" @bind-Checked="isHandleChecked"></SfSwitch>
+
+            </div>
+            <div class="col-lg-3">
+                    <label style="font-size:12px;">Duration</label>
+                    <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="350px" Placeholder="Select" DataSource="@LocalData4">
+                        <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                    </SfDropDownList>
+
+
+                </div>
+        </div>
+            <div class="row">
+                <div class="col-lg-3 col-8 mb-2">
+                    <label class="form-label" style="font-size:12px;">Start Time</label>
+                    <div class="row">
+                        <div class="col-lg-2 col-4">
+                            <select class="form-control" style="font-size:10px;">
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2 col-4">
+                            <select class="form-control" style="font-size:10px;">
+                                <option class="text-xxs">00</option>
+                                <option class="text-xxs">01</option>
+                                <option class="text-xxs">02</option>
+                                <option class="text-xxs">03</option>
+                                <option class="text-xxs">04</option>
+                                <option class="text-xxs">05</option>
+                                <option class="text-xxs">06</option>
+                                <option class="text-xxs">07</option>
+                                <option class="text-xxs">08</option>
+                                <option class="text-xxs">09</option>
+                                <option class="text-xxs">10</option>
+                                <option class="text-xxs">11</option>
+                                <option class="text-xxs">12</option>
+                                <option class="text-xxs">13</option>
+                                <option class="text-xxs">14</option>
+                                <option class="text-xxs" selected>15</option>
+                                <option class="text-xxs">16</option>
+                                <option class="text-xxs">17</option>
+                                <option class="text-xxs">18</option>
+                                <option class="text-xxs">19</option>
+                                <option class="text-xxs">20</option>
+                                <option class="text-xxs">21</option>
+                                <option class="text-xxs">22</option>
+                                <option class="text-xxs">23</option>
+                                <option class="text-xxs">24</option>
+                                <option class="text-xxs">25</option>
+                                <option class="text-xxs">26</option>
+                                <option class="text-xxs">27</option>
+                                <option class="text-xxs">28</option>
+                                <option class="text-xxs">29</option>
+                                <option class="text-xxs">30</option>
+                                <option class="text-xxs">31</option>
+                                <option class="text-xxs">32</option>
+                                <option class="text-xxs">33</option>
+                                <option class="text-xxs">34</option>
+                                <option class="text-xxs">35</option>
+                                <option class="text-xxs">36</option>
+                                <option class="text-xxs">37</option>
+                                <option class="text-xxs">38</option>
+                                <option class="text-xxs">39</option>
+                                <option class="text-xxs">40</option>
+                                <option class="text-xxs">41</option>
+                                <option class="text-xxs">42</option>
+                                <option class="text-xxs">43</option>
+                                <option class="text-xxs">44</option>
+                                <option class="text-xxs">45</option>
+                                <option class="text-xxs">46</option>
+                                <option class="text-xxs">47</option>
+                                <option class="text-xxs">48</option>
+                                <option class="text-xxs">49</option>
+                                <option class="text-xxs">50</option>
+                                <option class="text-xxs">51</option>
+                                <option class="text-xxs">52</option>
+                                <option class="text-xxs">53</option>
+                                <option class="text-xxs">54</option>
+                                <option class="text-xxs">55</option>
+                                <option class="text-xxs">56</option>
+                                <option class="text-xxs">57</option>
+                                <option class="text-xxs">58</option>
+                                <option class="text-xxs">59</option>
+                            </select>
+
+                        </div>
+                        <div class="col-lg-2 col-4">
+                            <select class="form-control" style="font-size:10px;">
+                                <option class="text-xxs">00</option>
+                                <option class="text-xxs">01</option>
+                                <option class="text-xxs">02</option>
+                                <option class="text-xxs">03</option>
+                                <option class="text-xxs">04</option>
+                                <option class="text-xxs">05</option>
+                                <option class="text-xxs">06</option>
+                                <option class="text-xxs">07</option>
+                                <option class="text-xxs">08</option>
+                                <option class="text-xxs">09</option>
+                                <option class="text-xxs">10</option>
+                                <option class="text-xxs">11</option>
+                                <option class="text-xxs">12</option>
+                                <option class="text-xxs">13</option>
+                                <option class="text-xxs">14</option>
+                                <option class="text-xxs">15</option>
+                                <option class="text-xxs">16</option>
+                                <option class="text-xxs">17</option>
+                                <option class="text-xxs">18</option>
+                                <option class="text-xxs">19</option>
+                                <option class="text-xxs">20</option>
+                                <option class="text-xxs">21</option>
+                                <option class="text-xxs">22</option>
+                                <option class="text-xxs">23</option>
+                                <option class="text-xxs">24</option>
+                                <option class="text-xxs">25</option>
+                                <option class="text-xxs">26</option>
+                                <option class="text-xxs">27</option>
+                                <option class="text-xxs">28</option>
+                                <option class="text-xxs">29</option>
+                                <option class="text-xxs">30</option>
+                                <option class="text-xxs">31</option>
+                                <option class="text-xxs">32</option>
+                                <option class="text-xxs">33</option>
+                                <option class="text-xxs">34</option>
+                                <option class="text-xxs">35</option>
+                                <option class="text-xxs">36</option>
+                                <option class="text-xxs">37</option>
+                                <option class="text-xxs">38</option>
+                                <option class="text-xxs">39</option>
+                                <option class="text-xxs">40</option>
+                                <option class="text-xxs">41</option>
+                                <option class="text-xxs">42</option>
+                                <option class="text-xxs">43</option>
+                                <option class="text-xxs">44</option>
+                                <option class="text-xxs">45</option>
+                                <option class="text-xxs">46</option>
+                                <option class="text-xxs">47</option>
+                                <option class="text-xxs">48</option>
+                                <option class="text-xxs">49</option>
+                                <option class="text-xxs">50</option>
+                                <option class="text-xxs">51</option>
+                                <option class="text-xxs">52</option>
+                                <option class="text-xxs">53</option>
+                                <option class="text-xxs">54</option>
+                                <option class="text-xxs">55</option>
+                                <option class="text-xxs">56</option>
+                                <option class="text-xxs">57</option>
+                                <option class="text-xxs">58</option>
+                                <option class="text-xxs">59</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-8 mx-1 mb-2">
+                    <label class="form-label"style="font-size:12px;">End Time</label>
+                    <div class="row">
+                        <div class="col-lg-2 col-4">
+                            <select class="form-control" style="font-size:10px;">
+                                <option class="text-xxs">9</option>
+                                <option class="text-xxs">10</option>
+                                <option class="text-xxs">11</option>
+                                <option class="text-xxs">12</option>
+                                <option class="text-xxs">13</option>
+                                <option class="text-xxs">14</option>
+                                <option class="text-xxs" selected>15</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2 col-4">
+                            <select class="form-control" style="font-size:10px;">
+                                <option class="text-xxs">00</option>
+                                <option class="text-xxs">01</option>
+                                <option class="text-xxs">02</option>
+                                <option class="text-xxs">03</option>
+                                <option class="text-xxs">04</option>
+                                <option class="text-xxs">05</option>
+                                <option class="text-xxs">06</option>
+                                <option class="text-xxs">07</option>
+                                <option class="text-xxs">08</option>
+                                <option class="text-xxs">09</option>
+                                <option class="text-xxs">10</option>
+                                <option class="text-xxs">11</option>
+                                <option class="text-xxs">12</option>
+                                <option class="text-xxs">13</option>
+                                <option class="text-xxs">14</option>
+                                <option class="text-xxs">15</option>
+                                <option class="text-xxs">16</option>
+                                <option class="text-xxs">17</option>
+                                <option class="text-xxs">18</option>
+                                <option class="text-xxs">19</option>
+                                <option class="text-xxs">20</option>
+                                <option class="text-xxs">21</option>
+                                <option class="text-xxs">22</option>
+                                <option class="text-xxs">23</option>
+                                <option class="text-xxs">24</option>
+                                <option class="text-xxs">25</option>
+                                <option class="text-xxs">26</option>
+                                <option class="text-xxs">27</option>
+                                <option class="text-xxs">28</option>
+                                <option class="text-xxs">29</option>
+                                <option class="text-xxs">30</option>
+                                <option class="text-xxs">31</option>
+                                <option class="text-xxs">32</option>
+                                <option class="text-xxs">33</option>
+                                <option class="text-xxs">34</option>
+                                <option class="text-xxs">35</option>
+                                <option class="text-xxs">36</option>
+                                <option class="text-xxs">37</option>
+                                <option class="text-xxs">38</option>
+                                <option class="text-xxs">39</option>
+                                <option class="text-xxs">40</option>
+                                <option class="text-xxs">41</option>
+                                <option class="text-xxs">42</option>
+                                <option class="text-xxs">43</option>
+                                <option class="text-xxs">44</option>
+                                <option class="text-xxs">45</option>
+                                <option class="text-xxs">46</option>
+                                <option class="text-xxs">47</option>
+                                <option class="text-xxs">48</option>
+                                <option class="text-xxs">49</option>
+                                <option class="text-xxs">50</option>
+                                <option class="text-xxs">51</option>
+                                <option class="text-xxs">52</option>
+                                <option class="text-xxs">53</option>
+                                <option class="text-xxs">54</option>
+                                <option class="text-xxs">55</option>
+                                <option class="text-xxs">56</option>
+                                <option class="text-xxs">57</option>
+                                <option class="text-xxs">58</option>
+                                <option class="text-xxs">59</option>
+                            </select>
+
+                        </div>
+                        <div class="col-lg-2 col-4">
+                            <select class="form-control" style="font-size:10px;">
+                                <option class="text-xxs">00</option>
+                                <option class="text-xxs">01</option>
+                                <option class="text-xxs">02</option>
+                                <option class="text-xxs">03</option>
+                                <option class="text-xxs">04</option>
+                                <option class="text-xxs">05</option>
+                                <option class="text-xxs">06</option>
+                                <option class="text-xxs">07</option>
+                                <option class="text-xxs">08</option>
+                                <option class="text-xxs">09</option>
+                                <option class="text-xxs">10</option>
+                                <option class="text-xxs">11</option>
+                                <option class="text-xxs">12</option>
+                                <option class="text-xxs">13</option>
+                                <option class="text-xxs">14</option>
+                                <option class="text-xxs">15</option>
+                                <option class="text-xxs">16</option>
+                                <option class="text-xxs">17</option>
+                                <option class="text-xxs">18</option>
+                                <option class="text-xxs">19</option>
+                                <option class="text-xxs">20</option>
+                                <option class="text-xxs">21</option>
+                                <option class="text-xxs">22</option>
+                                <option class="text-xxs">23</option>
+                                <option class="text-xxs">24</option>
+                                <option class="text-xxs">25</option>
+                                <option class="text-xxs">26</option>
+                                <option class="text-xxs">27</option>
+                                <option class="text-xxs">28</option>
+                                <option class="text-xxs">29</option>
+                                <option class="text-xxs">30</option>
+                                <option class="text-xxs">31</option>
+                                <option class="text-xxs">32</option>
+                                <option class="text-xxs">33</option>
+                                <option class="text-xxs">34</option>
+                                <option class="text-xxs">35</option>
+                                <option class="text-xxs">36</option>
+                                <option class="text-xxs">37</option>
+                                <option class="text-xxs">38</option>
+                                <option class="text-xxs">39</option>
+                                <option class="text-xxs">40</option>
+                                <option class="text-xxs">41</option>
+                                <option class="text-xxs">42</option>
+                                <option class="text-xxs">43</option>
+                                <option class="text-xxs">44</option>
+                                <option class="text-xxs">45</option>
+                                <option class="text-xxs">46</option>
+                                <option class="text-xxs">47</option>
+                                <option class="text-xxs">48</option>
+                                <option class="text-xxs">49</option>
+                                <option class="text-xxs">50</option>
+                                <option class="text-xxs">51</option>
+                                <option class="text-xxs">52</option>
+                                <option class="text-xxs">53</option>
+                                <option class="text-xxs">54</option>
+                                <option class="text-xxs">55</option>
+                                <option class="text-xxs">56</option>
+                                <option class="text-xxs">57</option>
+                                <option class="text-xxs">58</option>
+                                <option class="text-xxs">59</option>
+                            </select>
+                        </div>
+                        </div>
+                        </div>
+                                     
+                        <div class="col-lg-3 col-8 mx-1 mb-2">
+                    <label class="form-label" style="font-size:12px;">Check condition next day after</label>
+                    <div class="row">
+                        <div class="col-lg-2 col-4">
+                            <select class="form-control" style="font-size:10px;">
+                                <option class="text-xxs">9</option>
+                                <option class="text-xxs">10</option>
+                                <option class="text-xxs">11</option>
+                                <option class="text-xxs">12</option>
+                                <option class="text-xxs">13</option>
+                                <option class="text-xxs">14</option>
+                                <option class="text-xxs" selected>15</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2 col-4">
+                            <select class="form-control" style="font-size:10px;">
+                                <option class="text-xxs">00</option>
+                                <option class="text-xxs">01</option>
+                                <option class="text-xxs">02</option>
+                                <option class="text-xxs">03</option>
+                                <option class="text-xxs">04</option>
+                                <option class="text-xxs">05</option>
+                                <option class="text-xxs">06</option>
+                                <option class="text-xxs">07</option>
+                                <option class="text-xxs">08</option>
+                                <option class="text-xxs">09</option>
+                                <option class="text-xxs">10</option>
+                                <option class="text-xxs">11</option>
+                                <option class="text-xxs">12</option>
+                                <option class="text-xxs">13</option>
+                                <option class="text-xxs">14</option>
+                                <option class="text-xxs">15</option>
+                                <option class="text-xxs">16</option>
+                                <option class="text-xxs">17</option>
+                                <option class="text-xxs">18</option>
+                                <option class="text-xxs">19</option>
+                                <option class="text-xxs">20</option>
+                                <option class="text-xxs">21</option>
+                                <option class="text-xxs">22</option>
+                                <option class="text-xxs">23</option>
+                                <option class="text-xxs">24</option>
+                                <option class="text-xxs">25</option>
+                                <option class="text-xxs">26</option>
+                                <option class="text-xxs">27</option>
+                                <option class="text-xxs">28</option>
+                                <option class="text-xxs">29</option>
+                                <option class="text-xxs">30</option>
+                                <option class="text-xxs">31</option>
+                                <option class="text-xxs">32</option>
+                                    <option class="text-xxs">33</option>
+                                <option class="text-xxs">34</option>
+                                <option class="text-xxs">35</option>
+                                <option class="text-xxs">36</option>
+                                <option class="text-xxs">37</option>
+                                <option class="text-xxs">38</option>
+                                <option class="text-xxs">39</option>
+                                <option class="text-xxs">40</option>
+                                <option class="text-xxs">41</option>
+                                <option class="text-xxs">42</option>
+                                <option class="text-xxs">43</option>
+                                <option class="text-xxs">44</option>
+                                <option class="text-xxs">45</option>
+                                <option class="text-xxs">46</option>
+                                <option class="text-xxs">47</option>
+                                <option class="text-xxs">48</option>
+                                <option class="text-xxs">49</option>
+                                <option class="text-xxs">50</option>
+                                <option class="text-xxs">51</option>
+                                <option class="text-xxs">52</option>
+                                <option class="text-xxs">53</option>
+                                <option class="text-xxs">54</option>
+                                <option class="text-xxs">55</option>
+                                <option class="text-xxs">56</option>
+                                <option class="text-xxs">57</option>
+                                <option class="text-xxs">58</option>
+                                <option class="text-xxs">59</option>
+                            </select>
+
+                        </div>
+                        <div class="col-lg-2 col-4">
+                            <select class="form-control" style="font-size:10px;">
+                                <option class="text-xxs">00</option>
+                                <option class="text-xxs">01</option>
+                                <option class="text-xxs">02</option>
+                                <option class="text-xxs">03</option>
+                                <option class="text-xxs">04</option>
+                                <option class="text-xxs">05</option>
+                                <option class="text-xxs">06</option>
+                                <option class="text-xxs">07</option>
+                                <option class="text-xxs">08</option>
+                                <option class="text-xxs">09</option>
+                                <option class="text-xxs">10</option>
+                                <option class="text-xxs">11</option>
+                                <option class="text-xxs">12</option>
+                                <option class="text-xxs">13</option>
+                                <option class="text-xxs">14</option>
+                                <option class="text-xxs">15</option>
+                                <option class="text-xxs">16</option>
+                                <option class="text-xxs">17</option>
+                                <option class="text-xxs">18</option>
+                                <option class="text-xxs">19</option>
+                                <option class="text-xxs">20</option>
+                                <option class="text-xxs">21</option>
+                                <option class="text-xxs">22</option>
+                                <option class="text-xxs">23</option>
+                                <option class="text-xxs">24</option>
+                                <option class="text-xxs">25</option>
+                                <option class="text-xxs">26</option>
+                                <option class="text-xxs">27</option>
+                                <option class="text-xxs">28</option>
+                                <option class="text-xxs">29</option>
+                                <option class="text-xxs">30</option>
+                                <option class="text-xxs">31</option>
+                                <option class="text-xxs">32</option>
+                                <option class="text-xxs">33</option>
+                                <option class="text-xxs">34</option>
+                                <option class="text-xxs">35</option>
+                                <option class="text-xxs">36</option>
+                                <option class="text-xxs">37</option>
+                                <option class="text-xxs">38</option>
+                                <option class="text-xxs">39</option>
+                                <option class="text-xxs">40</option>
+                                <option class="text-xxs">41</option>
+                                <option class="text-xxs">42</option>
+                                <option class="text-xxs">43</option>
+                                <option class="text-xxs">44</option>
+                                <option class="text-xxs">45</option>
+                                <option class="text-xxs">46</option>
+                                <option class="text-xxs">47</option>
+                                <option class="text-xxs">48</option>
+                                <option class="text-xxs">49</option>
+                                <option class="text-xxs">50</option>
+                                <option class="text-xxs">51</option>
+                                <option class="text-xxs">52</option>
+                                <option class="text-xxs">53</option>
+                                <option class="text-xxs">54</option>
+                                <option class="text-xxs">55</option>
+                                <option class="text-xxs">56</option>
+                                <option class="text-xxs">57</option>
+                                <option class="text-xxs">58</option>
+                                <option class="text-xxs">59</option>
+                            </select>
+                        </div>
+                    </div>
+               </div>
+            </div>
+            <hr class="horizontal dark">
+            
+            <h6>MTM TARGET</h6>
+            <div class="row mt-4">
+<div class="col-lg-6">
+    <div class="row">
+    <div class="col-lg-8">
+                    <label style="font-size:12px;">Type</label>
+                    <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="250px" Placeholder="Select" DataSource="@LocalData5">
+                        <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                    </SfDropDownList>
+                </div>
+
+                    <div class="col-lg-4">
+                    <label style="font-size:12px;">Value</label>
+                            <SfTextBox Readonly="true"></SfTextBox>
+
+                </div>
+                
+                <div class="col-lg-6 mt-2">
+                    <label style="font-size:12px;">Action</label>
+                    <SfTextBox Readonly="true"></SfTextBox>
+                </div>
+                    </div>
+
+                </div>
+<div class="col-lg-6">
+    <div class="row">
+    <div class="col-lg-8">
+                    <label style="font-size:12px;">Fixed Stopless</label>
+                    <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="250px" Placeholder="Select" DataSource="@LocalData5">
+                        <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                    </SfDropDownList>
+                </div>
+                        <div class="col-lg-4">
+                            <label style="font-size:12px;">Value</label>
+                            <SfTextBox Readonly="true"></SfTextBox>
+
+                        </div>
+
+                        <div class="col-lg-12 mt-2">
+                            <label style="font-size:12px;">Profit lock and Trailing Stopless </label>
+                            <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="250px" Placeholder="Select" DataSource="@LocalData6">
+                                <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                            </SfDropDownList>
+
+                        </div>
+                        <div class="col-lg-12 mt-2">
+                            <label style="font-size:12px;">Action </label>
+                            <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="250px" Placeholder="Square Off all position" DataSource="@LocalData6" Readonly="true">
+                                <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                            </SfDropDownList>
+
+                        </div>
+
+
+</div>
+</div>
+
+            </div>
+            <hr class="horizonal dark">
+            <h6 class="text-uppercase">Premium Matching</h6>
+            <div class="row mt-4">
+               <div class="col-lg-2">
+                    <SfCheckBox @bind-Checked="@isChecked"><small>No Matching of Premiums</small></SfCheckBox>  
+                 </div>
+                 
+                 <div class="col-lg-4">
+                    <SfCheckBox @bind-Checked="@isChecked"><small>Match Premiums with Maximum difference </small></SfCheckBox>  
+                    <SfTextBox></SfTextBox>
+                 </div>
+                 <div class="col-lg-3">
+                    <SfCheckBox @bind-Checked="@isChecked"><small> Premium Close to: </small></SfCheckBox>  
+                    <SfTextBox Readonly="true" ></SfTextBox>
+                 </div>
+                 <div class="col-lg-3">
+                    <SfCheckBox @bind-Checked="@isChecked"> <small>Premium range </small></SfCheckBox>  
+                    <div class="row">
+                        <div class="col-lg-4">                   
+                            <SfTextBox Readonly="true" ></SfTextBox>
+                            
+                            </div>
+                        <div class="col-lg-2"><small> to </small></div>
+                        <div class="col-lg-5">
+                            <SfTextBox Readonly="true" ></SfTextBox>
+                        </div>
+
+                    </div>
+                    
+                 </div>
+            </div>
+            <hr class="horizonal dark">
+            <h6 class="text-upercase">Advanced Settings</h6>
+            <div class="row mt-4 mb-4">
+                   <div class="col-lg-2">
+                    <label style="font-size:12px;">Entry Order Type</label>
+                    <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="250px" Placeholder="Select" DataSource="@LocalData7">
+                        <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                    </SfDropDownList>
+                </div>
+                   <div class="col-lg-3">
+                    <label style="font-size:12px;">Trigger & Limit price buffer in:</label>
+                    <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="250px" Placeholder="Select" DataSource="@LocalData8">
+                        <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                    </SfDropDownList>
+                </div>
+
+                   <div class="col-lg-3">
+                    <label style="font-size:12px;">Trigger & Limit price buffer value:</label>
+                <SfTextBox></SfTextBox>
+                </div>
+                   <div class="col-lg-4">
+                    <label style="font-size:12px;">Entry with Market order if order Open for (N) secs:</label>
+                <SfTextBox></SfTextBox>
+                </div>
+
+                <div class="row mt-4">
+                   <div class="col-lg-2">
+                    <label style="font-size:12px;">Exit Order Type</label>
+                    <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="250px" Placeholder="Select" DataSource="@LocalData7">
+                        <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                    </SfDropDownList>
+                </div>
+                
+                <div class="col-lg-4">
+                    <label style="font-size:12px;">SL placement delay (individual leg):</label>
+                    <SfTextBox></SfTextBox>
+                </div>
+                <div class="col-lg-3">
+                    <label style="font-size:12px;">SL placement delay(MTM SL)</label>
+                    <SfTextBox></SfTextBox>
+                </div>
+               </div>
+
+               <div class="row mt-4">
+                   <div class="col-lg-3">
+                    <label style="font-size:12px;">Entry Order Delay</label>
+                    <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="250px" Placeholder="Select" DataSource="@LocalData9">
+                        <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                    </SfDropDownList>
+                </div>
+                
+                <div class="col-lg-2">
+                    <label style="font-size:12px;">by(Seconds)</label>
+                    <SfTextBox Readonly="true"></SfTextBox>
+                </div>
+
+                <div class="col-lg-3">
+                    <label style="font-size:12px;">Exit Order Delay</label>
+                    <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="250px" Placeholder="Select" DataSource="@LocalData10">
+                        <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                    </SfDropDownList>                
+                    </div>
+                 <div class="col-lg-2">
+                    <label style="font-size:12px;">by(Seconds)</label>
+                    <SfTextBox Readonly="true"></SfTextBox>
+                </div>
+                </div>
+
+                <div class="row mt-4 mb-4">
+                    <div class="col-lg-3">
+                    <label style="font-size:12px;">Calculate Entry From:</label>
+                    <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="250px" Placeholder="Select" DataSource="@LocalData11">
+                        <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                    </SfDropDownList>                
+                    </div>
+                <div class="col-lg-3">
+                    <label style="font-size:12px;">Calculate Exit from:</label>
+                    <SfDropDownList TValue="string" TItem="Games" PopupHeight="350px" PopupWidth="250px" Placeholder="Select" DataSource="@LocalData12">
+                        <DropDownListFieldSettings Value="ID" Text="Text"></DropDownListFieldSettings>
+                    </SfDropDownList>                
+                    </div>
+
+                                    <div class="col-lg-3">
+                        <label style="font-size:12px;">Trailing frequency interval:</label>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <select class="form-control" style="font-size:10px;">
+                                                    <option class="text-xxs">01</option>
+                                                    <option class="text-xxs">03</option>
+                                                     <option class="text-xxs">05</option>
+                                                      <option class="text-xxs">10</option>
+                                                        <option class="text-xxs">15</option>
+                            
+                                                </select>
+                                             </div>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" style="font-size:10px;">
+                                <option class="text-xxs" >Minutes</option>
+                                <option class="text-xxs">Seconds</option>
+                            
+                                </select>
+
+                                            </div>
+
+                                        </div>
+                    </div>
+                    </div>
+                    <hr class="collapse-horizontal dark"/>
+                    <div class="row mt-4 mb-5">
+                        <div class="col-lg-12">
+                            <SfButton CssClass="e-primary"> Save</SfButton>
+                        </div>
+                    </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<style>
+
+    .e-primary{
+    width:70px;
+    height:30px;
+    }
+
+
+    /* Square Switch */
+    .e-switch-wrapper.square .e-switch-inner,
+    .e-switch-wrapper.square .e-switch-handle {
+        border-radius: 0;
+    }
+
+    /* Customize Handle and Bar Switch */
+    .e-switch-wrapper.custom-switch {
+        width: 60px;
+        height: 34px;
+    }
+
+        .e-switch-wrapper.custom-switch .e-switch-handle {
+            width: 25px;
+            height: 21px;
+        }
+
+        .e-switch-wrapper.custom-switch .e-switch-inner,
+        .e-switch-wrapper.custom-switch .e-switch-handle {
+            border-radius: 0;
+        }
+
+            .e-switch-wrapper.custom-switch .e-switch-handle.e-switch-active {
+                left: 42px;
+            }
+
+    /* Customize Handle and Bar Switch */
+    .e-switch-wrapper.handle-text{
+        width: 65px;
+        height: 31px;
+    }
+
+        .e-switch-wrapper.handle-text .e-switch-handle {
+            width: 30px;
+            height: 30px;
+            left: 2px;
+            background-color: #fff;
+        }
+
+    .e-switch-wrapper.handle-text .e-switch-inner,
+        .e-switch-wrapper.handle-text .e-switch-handle {
+            border-radius: 0;
+        }
+
+            .e-switch-wrapper.handle-text .e-switch-handle.e-switch-active {
+                left: 46px;
+            }
+
+            .e-switch-wrapper.handle-text .e-switch-inner.e-switch-active,
+            .e-switch-wrapper.handle-text:hover .e-switch-inner.e-switch-active .e-switch-on {
+                background-color: white;
+                border-color: white;
+            }
+
+        .e-switch-wrapper.handle-text .e-switch-inner,
+        .e-switch-wrapper.handle-text .e-switch-off {
+            background-color: #e3165b;
+            border-color: #e3165b;
+        }
+
+            .e-switch-wrapper.handle-text .e-switch-inner:after,
+            .e-switch-wrapper.handle-text .e-switch-inner:before {
+                font-size: 10px;
+                position: absolute;
+                line-height: 21px;
+                font-family: "Helvetica", sans-serif;
+                z-index: 1;
+                height: 100%;
+                transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+            }
+
+            .e-switch-wrapper.handle-text .e-switch-inner:before {
+                content: "CE";
+                color: blue;
+                left: 3px;
+            }
+
+            .e-switch-wrapper.handle-text .e-switch-inner:after {
+                content: "PE";
+                right: 5px;
+                color: #fff;
+            }
+
+            .e-switch-wrapper.handle-text .e-switch-inner.e-switch-active:before {
+                color: #fff;
+            }
+
+            .e-switch-wrapper.handle-text .e-switch-inner.e-switch-active:after {
+                color: #4d841d;
+            }
+
+        .e-switch-wrapper.handle-text:not(.e-switch-disabled):hover .e-switch-handle:not(.e-switch-active) {
+            background-color: #fff;
+        }
+</style>
+
+@code {
+    private bool isChecked = true;
+    private bool isHandleChecked = true;
+    public class Games
+    {
+        public string ID { get; set; }
+        public string Text { get; set; }
+    }
+    List<Games> LocalData = new List<Games> {
+new Games() { ID= "Game1", Text= "BankNifty" },
+new Games() { ID= "Game2", Text= "Finnifty" },
+new Games() { ID= "Game3", Text= "Nifty" },
+  };
+  List<Games> LocalData2 = new List<Games> {
+new Games() { ID= "Game1", Text= "Options" },
+new Games() { ID= "Game2", Text= "Futures" },
+  };
+  List<Games> LocalData4 = new List<Games> {
+new Games() { ID= "Game1", Text= "STBT/BTST" },
+new Games() { ID= "Game2", Text= "(N) days before expiry" },
+  };
+    
+  List<Games> LocalData5 = new List<Games> {
+new Games() { ID= "Game1", Text= "MTM in Percentage" },
+new Games() { ID= "Game2", Text= "MTM in Total Amount" },
+new Games() { ID= "Game2", Text= "None" },
+  };
+
+  List<Games> LocalData6 = new List<Games> {
+new Games() { ID= "Game1", Text= "Trailing Stoploss" },
+new Games() { ID= "Game2", Text= "Lock Profit" },
+new Games() { ID= "Game2", Text= "Trail Profit" },
+new Games() { ID= "Game2", Text= "Lock & Trail Profit" },
+new Games() { ID= "Game2", Text= "None" },
+  };
+  
+  List<Games> LocalData7 = new List<Games> {
+new Games() { ID= "Game1", Text= "Market(M)" },
+new Games() { ID= "Game2", Text= "Limit(L)/Stoploss Limit(SL-L)" },
+  };
+  
+ List<Games> LocalData8 = new List<Games> {
+new Games() { ID= "Game1", Text= "Points" },
+new Games() { ID= "Game2", Text= "Percentage" },
+  };
+  
+List<Games> LocalData9 = new List<Games> {
+new Games() { ID= "Game1", Text= "No delay" },
+new Games() { ID= "Game1", Text= "Delay Entry of Sell Positions  " },
+new Games() { ID= "Game2", Text= "Delay Entry of Buy Positions" },
+  };
+ List<Games> LocalData10 = new List<Games> {
+new Games() { ID= "Game1", Text= "No delay" },
+new Games() { ID= "Game1", Text= "Delay Exit of Sell Positions  " },
+new Games() { ID= "Game2", Text= "Delay Exit of Buy Positions" },
+  };
+
+  List<Games> LocalData11 = new List<Games> {
+new Games() { ID= "Game1", Text= "LTP" },
+new Games() { ID= "Game1", Text= "Average Entry price  " },
+  };
+  List<Games> LocalData12 = new List<Games> {
+new Games() { ID= "Game1", Text= "LTP" },
+new Games() { ID= "Game1", Text= "Average Exit price" },
+  };
+  
+
+
+
+ List<Games> LocalData3 = new List<Games> {
+new Games() { ID= "Game1", Text= "ATM9" },
+new Games() { ID= "Game2", Text= "ATM8" },
+new Games() { ID= "Game2", Text= "ATM7" },
+new Games() { ID= "Game2", Text= "ATM6" },
+new Games() { ID= "Game2", Text= "ATM5" },
+new Games() { ID= "Game2", Text= "ATM4" },
+new Games() { ID= "Game2", Text= "ATM3" },
+new Games() { ID= "Game2", Text= "ATM2" },
+new Games() { ID= "Game2", Text= "ATM1" },
+new Games() { ID= "Game2", Text= "ATM" },
+new Games() { ID= "Game2", Text= "ITM1" },
+new Games() { ID= "Game2", Text= "ITM2" },
+new Games() { ID= "Game2", Text= "ITM3" },
+new Games() { ID= "Game2", Text= "ITM4" },
+new Games() { ID= "Game2", Text= "ITM5" },
+new Games() { ID= "Game2", Text= "ITM6" },
+new Games() { ID= "Game2", Text= "ITM7" },
+new Games() { ID= "Game2", Text= "ITM8" },
+new Games() { ID= "Game2", Text= "ITM9" },
+
+
+
+  };
+}
