@@ -1,0 +1,62 @@
+﻿@layout MainLayout
+@page "/contact"
+@using Syncfusion.Blazor.DropDowns
+@using System;
+@using Syncfusion.Blazor.Inputs;
+@using Syncfusion.Blazor.Cards;
+@using Syncfusion.Blazor.Buttons;
+
+
+<div class="container-fluid">
+        <div class="row mb-3">
+            <div class="col-lg-12 mt-lg-0 px-2 ">
+                <SfCard style="border-radius:10px;">
+                    <CardContent>
+                    <div class="row">
+                        <div class="col-sm-2 col-lg-2 ">
+                            <div class="avatar avatar-xl position-relative">
+                                @*<img src="/css/img/team-3.jpg" alt="bruce" class="w-100 border-radius-lg shadow-sm">*@
+                            </div>
+                        </div>
+
+                        <div class="col-sm-10 my-auto">
+                            <div class="h-100">
+                                <h5 class="m-3 font-weight-bolder text-lg-start" style="font-family:'Times New Roman', Times, serif;">
+                                    Contact Support
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </CardContent>
+
+            </SfCard>
+
+        </div>
+        </div>
+
+
+    <div class="row mb-5 text-center">
+        <div class="col-lg-12">
+            <SfCard style="border-radius:10px; margin-top:5px;">
+                    <CardContent>
+                            <h5>Mail us at:</h5>
+                            <a href="mailto:support@keepsl.com">support@keepsl.com</a>
+
+                            <h5>Talk to us on WhatsApp:</h5>
+
+                                <img src="/css/icons/whatsapp2.png" onclick="mysecondFunction()" alt="WhatsApp Account" style="border:1px; border-radius:2px;width:180px;height:50px;">
+
+                            <h5>Join our Telegram Channel for Regular Updates</h5
+<img src="/css/icons/telegrambtn.png" onclick="myFunction()" alt="telegram Account" style="border:1px; border-radius:2px;width:180px;height:50px;">
+
+                            <h5 class="mt-3">Registered office:</h5>
+                            <p>KEEPSL TECHNOLOGIES LLP PUTTENAHALLI(V)<br /> JP NAGAR, 7TH PHASE BENGALURU, <br />KARNATAKA,INDIA 560078</p>
+
+                        
+          </CardContent>
+          </SfCard>
+    </div>
+
+
+</div>
+</div>

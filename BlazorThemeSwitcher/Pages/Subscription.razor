@@ -1,0 +1,112 @@
+﻿@layout MainLayout
+
+@using Syncfusion.Blazor.Grids
+
+@using Syncfusion.Blazor.DropDowns
+@using System;
+@using Syncfusion.Blazor.Inputs;
+@using Syncfusion.Blazor.Cards;
+@using Syncfusion.Blazor.Buttons;
+@using System.ComponentModel.DataAnnotations;
+
+@page "/subscription"
+
+
+<div class="container mt-0 mb-8">
+    <div class="row mb-3">
+    <div class="col-12">
+                <SfCard style="border-radius:10px;">  
+                <CardContent>                     
+    <div class="row">
+                    <div class="col-1">
+                        <div class="avatar avatar-xl position-relative">
+                            @* <img src="/css/img/team-3.jpg" alt="bruce" class="w-100 border-radius-lg shadow-sm">*@
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+
+    <h5 class="my-3 font-weight-bolder" style="margin-left:0px;font-family:'Times New Roman', Times, serif;">
+        Subscription
+    </h5>
+                </div>
+                    </div>
+            </CardContent>
+            </SfCard>
+        </div>
+    </div>
+
+
+
+<div class="row"> 
+    <div class="col-lg-12 mb-3 rounded" style="border-radius:10px;">
+        
+        <SfGrid  DataSource="@Subscriptions" style="background:yellow;">
+                       
+                        <GridColumns>
+
+                    <GridColumn Field=@nameof(Subs.OrderID) HeaderText="Subscription Type" IsPrimaryKey="true" TextAlign="TextAlign.Center" Width="120"></GridColumn>
+                    <GridColumn Field=@nameof(Subs.OrderDate) HeaderText="Subscription End Date" EditType="EditType.DatePickerEdit" Format="d" TextAlign="TextAlign.Center" Width="120"></GridColumn>
+                            <GridColumn Field=@nameof(Subs.CustomerID) HeaderText=" Strategy Limit" TextAlign="TextAlign.Center" Width="120"></GridColumn>
+                    <GridColumn Field=@nameof(Subs.Freight) HeaderText="Account Limit" Format="C2" TextAlign="TextAlign.Center" Width="120"></GridColumn>
+                         <GridColumn HeaderText="Actions" TextAlign="TextAlign.Center" Width="120">
+                                <Template>
+                                    <SfButton CssClass="e-primary">Pay</SfButton>                
+                                </Template>
+                            </GridColumn>
+                        </GridColumns>
+
+                    </SfGrid>
+        
+        </div>
+        </div>
+
+    <div class="row">
+        <div class="col-lg-12 mb-3">
+                    <SfGrid DataSource="@Subscriptions" AllowPaging="true" Height="45">
+                        <GridColumns>
+                    <GridColumn Field=@nameof(Subs.OrderID) HeaderText="Payment ID" IsPrimaryKey="true" TextAlign="TextAlign.Left" Width="120"></GridColumn>
+                    <GridColumn Field=@nameof(Subs.OrderDate) HeaderText="Payment Date" EditType="EditType.DatePickerEdit" Format="d" TextAlign="TextAlign.Left" Width="120"></GridColumn>
+                    <GridColumn Field=@nameof(Subs.CustomerID) HeaderText=" Payment Amount" TextAlign="TextAlign.Left" Width="120"></GridColumn>
+                    <GridColumn Field=@nameof(Subs.Freight) HeaderText="Status" Format="C2" TextAlign="TextAlign.Left" Width="120"></GridColumn>
+                        </GridColumns>
+                    </SfGrid>
+            </div>
+   </div>
+</div>
+
+
+@code {
+    public List<Subs> Subscriptions { get; set; }
+    protected override void OnInitialized()
+    {
+        Subscriptions = Enumerable.Range(0,1).Select(x => new Subs()
+            {
+                OrderID = 1000 + x,
+                CustomerID = (new string[] { "ALFKI", "ANANTR", "ANTON", "BLONP", "BOLID" })[new Random().Next(5)],
+                Freight = 2.1 * x,
+                OrderDate = DateTime.Now.AddDays(-x),
+                ShipCountry = (new string[] { "USA", "UK", "CHINA", "RUSSIA", "INDIA" })[new Random().Next(5)]
+            }).ToList();
+    }
+
+    public class Subs
+    {
+        public int? OrderID { get; set; }
+        public string CustomerID { get; set; }
+        public DateTime? OrderDate { get; set; }
+        public double? Freight { get; set; }
+        public string ShipCountry { get; set; }
+    }
+                    }
+
+
+<style>
+    .e-primary {
+        border-radius: 5px;
+        width: 80px;
+        height:40px;
+    }
+
+ 
+</style>

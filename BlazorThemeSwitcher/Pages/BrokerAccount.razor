@@ -1,4 +1,5 @@
 ﻿@layout MainLayout
+@page "/"
 @page "/brokeraccount"
 @using Syncfusion.Blazor.Grids
 
@@ -11,9 +12,16 @@
 
 
 <div class="container pb-xl-4 pb-8 mt-0">
-    <div class="row mb-1 rounded">
+    <div class="row">
         <div class="col-lg-12 text-end mt-0">
-            <a class="btn bg-white text-primary mt-0" href="createbroker">+&nbsp;Broker Account</a>
+
+<SfCard style="width:auto; background:transparent;">
+    <CardContent>
+                    <SfButton CssClass="e-primary"><a href="createbroker">+&nbsp;Broker Account</a></SfButton>
+
+    </CardContent>
+
+</SfCard>
         </div>
           
     </div>
@@ -22,19 +30,21 @@
         <div class="row row-cols-1 row-cols-md-4 text-center">
             
 @*            Card 1*@
+            
+<div class="col-lg-12 text-end mt-0">
+                           <SfButton CssClass="e-primary">+&nbsp;Broker Account</SfButton>
+            </div>
 
-            <div class="col-sm-3 mb-3">
+            <div class="col-lg-3 mb-3">
+
                 <SfCard>
-                    <CardHeader>
-                        <img class="img m-0 p-0" src="/css/icons/2_logo.png" height="70" />
-                                
-                    </CardHeader>
-                    <hr class="horizontal dark pt-0 mt-0" />
                         <CardContent>
+                        <img class="img m-0 p-0" src="/css/icons/2_logo.png" height="70" />
+                    <hr class="horizontal dark pt-0 mt-0" />
                             <div class="row">
                                 <div class="col-lg-12">
 
-                                    <p class="text-start p-0 m-0">
+                                    <p class="text-start text-sm p-0 m-0">
                                         Broker Name
                                     </p>
                                 </div>
@@ -42,7 +52,7 @@
                             <div class="col">
                                 <div class="row">
                                     <div class="col-lg-8 text-start">
-                                        <p class="text-start">
+                                        <p class="text-start text-sm">
                                             username
 
                                         </p>
@@ -73,352 +83,11 @@
 
                 @*Card 2*@
 
-            <div class="col-sm-3 mb-3">
+            <div class="col-lg-3 mb-3">
                 <SfCard>
-                    <CardHeader>
+                    <CardContent>
                         <img class="img m-0 p-0" src="/css/icons/aliceblue.webp" height="70" />
-
-                    </CardHeader>
-                    <hr class="horizontal dark pt-0 mt-0" />
-                    <CardContent>
-                        <div class="row">
-                            <div class="col-lg-12">
-
-                                <p class="text-start p-0 m-0">
-                                    Broker Name
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row">
-                                <div class="col-lg-8 text-start">
-                                    <p class="text-start">
-                                        username
-
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="mt-2 mb-2 d-flex">
-                                <h6 class="mb-0" style="font-family:'Times New Roman', Times, serif;">Enable</h6>
-                                <div class="form-switch ps-0 ms-auto my-auto">
-                                    @*<input class="form-check-input mt-1 ms-auto" type="checkbox" id="enable">*@
-                                    <SfSwitch @bind-Checked="@isUSB"></SfSwitch>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="text-end pt-2">
-                            <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
-                                <i class="fas fa-user-edit text-secondary"></i>
-                            </a>
-                            <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
-                                <i class="fas fa-trash text-secondary"></i>
-                            </a>
-                        </div>
-                    </CardContent>
-                </SfCard>
-            </div>
-
-
-               @*  Card 3 *@
-
-                <div class="col-sm-3 mb-3">
-                <SfCard>
-                    <CardHeader>
-                        <img class="img m-0 p-0" src="/css/icons/angelone.png" height="70" />
-                                
-                    </CardHeader>
-                    <hr class="horizontal dark pt-0 mt-0" />
-                        <CardContent>
-                            <div class="row">
-                                <div class="col-lg-12">
-
-                                    <p class="text-start p-0 m-0">
-                                        Broker Name
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col-lg-8 text-start">
-                                        <p class="text-start">
-                                            username
-
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="mt-2 mb-2 d-flex">
-                                <h6 class="mb-0"style="font-family:'Times New Roman', Times, serif;">Enable</h6>
-                                    <div class="form-switch ps-0 ms-auto my-auto">
-                                        @*<input class="form-check-input mt-1 ms-auto" type="checkbox" id="enable">*@
-                                       <SfSwitch @bind-Checked="@isUSB"></SfSwitch>                                                                
-                                    </div>
-                                </div>
-
-                            </div>
-                        <div class="text-end pt-2">
-                                <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
-                                    <i class="fas fa-user-edit text-secondary"></i>
-                                </a>
-                                <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
-                                    <i class="fas fa-trash text-secondary"></i>
-                                </a>
-                            </div>
-                        </CardContent>
-                    </SfCard>
-                    </div>
-
-                   @* Card 4*@
-
-                <div class="col-sm-3 mb-3">
-                <SfCard>
-                    <CardHeader>
-                        <img class="img m-0 p-0" src="/css/icons/2_logo.png" height="70" />
-
-                    </CardHeader>
-                    <hr class="horizontal dark pt-0 mt-0" />
-                    <CardContent>
-                        <div class="row">
-                            <div class="col-lg-12">
-
-                                <p class="text-start p-0 m-0">
-                                    Broker Name
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row">
-                                <div class="col-lg-8 text-start">
-                                    <p class="text-start">
-                                        username
-
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="mt-2 mb-2 d-flex">
-                                <h6 class="mb-0" style="font-family:'Times New Roman', Times, serif;">Enable</h6>
-                                <div class="form-switch ps-0 ms-auto my-auto">
-                                    @*<input class="form-check-input mt-1 ms-auto" type="checkbox" id="enable">*@
-                                    <SfSwitch @bind-Checked="@isUSB"></SfSwitch>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="text-end pt-2">
-                            <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
-                                <i class="fas fa-user-edit text-secondary"></i>
-                            </a>
-                            <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
-                                <i class="fas fa-trash text-secondary"></i>
-                            </a>
-                        </div>
-                    </CardContent>
-                </SfCard>
-                </div>
-
-
-                @* Card 5 *@
-
-                <div class="col-sm-3 mb-3">
-                <SfCard>
-                    <CardHeader>
-                        <img class="img m-0 p-0" src="/css/icons/2_logo.png" height="70" />
-
-                    </CardHeader>
-                    <hr class="horizontal dark pt-0 mt-0" />
-                    <CardContent>
-                        <div class="row">
-                            <div class="col-lg-12">
-
-                                <p class="text-start p-0 m-0">
-                                    Broker Name
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row">
-                                <div class="col-lg-8 text-start">
-                                    <p class="text-start">
-                                        username
-
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="mt-2 mb-2 d-flex">
-                                <h6 class="mb-0"style="font-family:'Times New Roman', Times, serif;">Enable</h6>
-                                <div class="form-switch ps-0 ms-auto my-auto">
-                                    
-                                    <SfSwitch @bind-Checked="@isUSB"></SfSwitch>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="text-end pt-2">
-                            <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
-                                <i class="fas fa-user-edit text-secondary"></i>
-                            </a>
-                            <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
-                                <i class="fas fa-trash text-secondary"></i>
-                            </a>
-                        </div>
-                    </CardContent>
-                </SfCard>
-                </div>
-
-
-                @*Card 6*@
-                <div class="col-sm-3 mb-3">
-                <SfCard>
-                    <CardHeader>
-                        <img class="img m-0 p-0" src="/css/icons/2_logo.png" height="70" />
-
-                    </CardHeader>
-                    <hr class="horizontal dark pt-0 mt-0" />
-                    <CardContent>
-                        <div class="row">
-                            <div class="col-lg-12">
-
-                                <p class="text-start p-0 m-0">
-                                    Broker Name
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row">
-                                <div class="col-lg-8 text-start">
-                                    <p class="text-start">
-                                        username
-
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="mt-2 mb-2 d-flex">
-                                <h6 class="mb-0" style="font-family:'Times New Roman', Times, serif;">Enable</h6>
-                                <div class="form-switch ps-0 ms-auto my-auto">
-                                    @*<input class="form-check-input mt-1 ms-auto" type="checkbox" id="enable">*@
-                                    <SfSwitch @bind-Checked="@isUSB"></SfSwitch>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="text-end pt-2">
-                            <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
-                                <i class="fas fa-user-edit text-secondary"></i>
-                            </a>
-                            <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
-                                <i class="fas fa-trash text-secondary"></i>
-                            </a>
-                        </div>
-                    </CardContent>
-                </SfCard>
-                </div>
-
-
-             @*   Card 7*@
-                <div class="col-sm-3 mb-3">
-                                    <SfCard>
-                    <CardHeader>
-                        <img class="img m-0 p-0" src="/css/icons/shoonya3.png" height="70" />
-                                
-                    </CardHeader>
-                    <hr class="horizontal dark pt-0 mt-0" />
-                        <CardContent>
-                            <div class="row">
-                                <div class="col-lg-12">
-
-                                    <p class="text-start p-0 m-0">
-                                        Broker Name
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col-lg-8 text-start">
-                                        <p class="text-start">
-                                            username
-
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="mt-2 mb-2 d-flex">
-                                <h6 class="mb-0"style="font-family:'Times New Roman', Times, serif;">Enable</h6>
-                                    <div class="form-switch ps-0 ms-auto my-auto">
-                                        @*<input class="form-check-input mt-1 ms-auto" type="checkbox" id="enable">*@
-                                       <SfSwitch @bind-Checked="@isUSB"></SfSwitch>                                                                
-                                    </div>
-                                </div>
-
-                            </div>
-                        <div class="text-end pt-2">
-                                <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
-                                    <i class="fas fa-user-edit text-secondary"></i>
-                                </a>
-                                <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
-                                    <i class="fas fa-trash text-secondary"></i>
-                                </a>
-                            </div>
-                        </CardContent>
-                    </SfCard>
-                </div>
-
-
-@*                Card 8*@
-                <div class="col-sm-3 mb-3">
-                <SfCard>
-                    <CardHeader>
-                        <img class="img m-0 p-0" src="/css/icons/2_logo.png" height="70" />
-
-                    </CardHeader>
-                    <hr class="horizontal dark pt-0 mt-0" />
-                    <CardContent>
-                        <div class="row">
-                            <div class="col-lg-12">
-
-                                <p class="text-start p-0 m-0">
-                                    Broker Name
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row">
-                                <div class="col-lg-8 text-start">
-                                    <p class="text-start">
-                                        username
-
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="mt-2 mb-2 d-flex">
-                                <h6 class="mb-0" style="font-family:'Times New Roman', Times, serif;">Enable</h6>
-                                <div class="form-switch ps-0 ms-auto my-auto">
-                                    @*<input class="form-check-input mt-1 ms-auto" type="checkbox" id="enable">*@
-                                    <SfSwitch @bind-Checked="@isUSB"></SfSwitch>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="text-end pt-2">
-                            <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
-                                <i class="fas fa-user-edit text-secondary"></i>
-                            </a>
-                            <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
-                                <i class="fas fa-trash text-secondary"></i>
-                            </a>
-                        </div>
-                    </CardContent>
-                </SfCard>
-            </div>
-
-
-                @* Card 9 *@
-                <div class="col-sm-3 mb-3">
-                <SfCard>
-                    <CardHeader>
-                        <img class="img m-0 p-0" src="/css/icons/aliceblue.webp" height="70" />
-
-                    </CardHeader>
-                    <hr class="horizontal dark pt-0 mt-0" />
-                    <CardContent>
+                        <hr class="horizontal dark pt-0 mt-0" />
                         <div class="row">
                             <div class="col-lg-12">
 
@@ -440,7 +109,7 @@
                                 <h6 class="mb-0" style="font-family:'Times New Roman', Times, serif;">Enable</h6>
                                 <div class="form-switch ps-0 ms-auto my-auto">
                                     @*<input class="form-check-input mt-1 ms-auto" type="checkbox" id="enable">*@
-                                    <SfSwitch @bind-Checked="isUSB"></SfSwitch>
+                                    <SfSwitch @bind-Checked="@isUSB"></SfSwitch>
                                 </div>
                             </div>
 
@@ -455,8 +124,320 @@
                         </div>
                     </CardContent>
                 </SfCard>
+            </div>
+
+               @*  Card 3 *@
+
+            <div class="col-lg-3 mb-3">
+                <SfCard>
+                    <CardContent>
+                        <img class="img m-0 p-0" src="/css/icons/angelone.png" height="70" />
+                        <hr class="horizontal dark pt-0 mt-0" />
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                                <p class="text-start text-sm p-0 m-0">
+                                    Broker Name
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-lg-8 text-start">
+                                    <p class="text-start text-sm">
+                                        username
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-2 mb-2 d-flex">
+                                <h6 class="mb-0" style="font-family:'Times New Roman', Times, serif;">Enable</h6>
+                                <div class="form-switch ps-0 ms-auto my-auto">
+                                    @*<input class="form-check-input mt-1 ms-auto" type="checkbox" id="enable">*@
+                                    <SfSwitch @bind-Checked="@isUSB"></SfSwitch>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="text-end pt-2">
+                            <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                                <i class="fas fa-user-edit text-secondary"></i>
+                            </a>
+                            <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                                <i class="fas fa-trash text-secondary"></i>
+                            </a>
+                        </div>
+                    </CardContent>
+                </SfCard>
+            </div>
+
+                   @* Card 4*@
+
+            <div class="col-lg-3 mb-3">
+                <SfCard>
+                        <CardContent>
+                        <img class="img m-0 p-0" src="/css/icons/2_logo.png" height="70" />
+                    <hr class="horizontal dark pt-0 mt-0" />
+                            <div class="row">
+                                <div class="col-lg-12">
+
+                                    <p class="text-start text-sm p-0 m-0">
+                                        Broker Name
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-lg-8 text-start">
+                                        <p class="text-start text-sm">
+                                            username
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="mt-2 mb-2 d-flex">
+                                <h6 class="mb-0"style="font-family:'Times New Roman', Times, serif;">Enable</h6>
+                                    <div class="form-switch ps-0 ms-auto my-auto">
+                                        @*<input class="form-check-input mt-1 ms-auto" type="checkbox" id="enable">*@
+                                       <SfSwitch @bind-Checked="@isUSB"></SfSwitch>                                                                
+                                    </div>
+                                </div>
+
+                            </div>
+                        <div class="text-end pt-2">
+                                <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                                    <i class="fas fa-user-edit text-secondary"></i>
+                                </a>
+                                <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                                    <i class="fas fa-trash text-secondary"></i>
+                                </a>
+                            </div>
+                        </CardContent>
+                    </SfCard>
                 </div>
 
+
+                @* Card 5 *@
+
+            <div class="col-lg-3 mb-3">
+                <SfCard>
+                    <CardContent>
+                        <img class="img m-0 p-0" src="/css/icons/2_logo.png" height="70" />
+                        <hr class="horizontal dark pt-0 mt-0" />
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                                <p class="text-start text-sm p-0 m-0">
+                                    Broker Name
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-lg-8 text-start">
+                                    <p class="text-start text-sm">
+                                        username
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-2 mb-2 d-flex">
+                                <h6 class="mb-0" style="font-family:'Times New Roman', Times, serif;">Enable</h6>
+                                <div class="form-switch ps-0 ms-auto my-auto">
+                                    @*<input class="form-check-input mt-1 ms-auto" type="checkbox" id="enable">*@
+                                    <SfSwitch @bind-Checked="@isUSB"></SfSwitch>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="text-end pt-2">
+                            <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                                <i class="fas fa-user-edit text-secondary"></i>
+                            </a>
+                            <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                                <i class="fas fa-trash text-secondary"></i>
+                            </a>
+                        </div>
+                    </CardContent>
+                </SfCard>
+            </div>
+
+                @*Card 6*@
+            <div class="col-lg-3 mb-3">
+                <SfCard>
+                    <CardContent>
+                        <img class="img m-0 p-0" src="/css/icons/2_logo.png" height="70" />
+                        <hr class="horizontal dark pt-0 mt-0" />
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                                <p class="text-start text-sm p-0 m-0">
+                                    Broker Name
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-lg-8 text-start">
+                                    <p class="text-start text-sm">
+                                        username
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-2 mb-2 d-flex">
+                                <h6 class="mb-0" style="font-family:'Times New Roman', Times, serif;">Enable</h6>
+                                <div class="form-switch ps-0 ms-auto my-auto">
+                                    @*<input class="form-check-input mt-1 ms-auto" type="checkbox" id="enable">*@
+                                    <SfSwitch @bind-Checked="@isUSB"></SfSwitch>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="text-end pt-2">
+                            <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                                <i class="fas fa-user-edit text-secondary"></i>
+                            </a>
+                            <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                                <i class="fas fa-trash text-secondary"></i>
+                            </a>
+                        </div>
+                    </CardContent>
+                </SfCard>
+            </div>
+
+             @*   Card 7*@
+            <div class="col-lg-3 mb-3">
+                <SfCard>
+                    <CardContent>
+                        <img class="img m-0 p-0" src="/css/icons/shoonya3.png" height="70" />
+                        <hr class="horizontal dark pt-0 mt-0" />
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                                <p class="text-start text-sm p-0 m-0">
+                                    Broker Name
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-lg-8 text-start">
+                                    <p class="text-start text-sm">
+                                        username
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-2 mb-2 d-flex">
+                                <h6 class="mb-0" style="font-family:'Times New Roman', Times, serif;">Enable</h6>
+                                <div class="form-switch ps-0 ms-auto my-auto">
+                                    @*<input class="form-check-input mt-1 ms-auto" type="checkbox" id="enable">*@
+                                    <SfSwitch @bind-Checked="@isUSB"></SfSwitch>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="text-end pt-2">
+                            <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                                <i class="fas fa-user-edit text-secondary"></i>
+                            </a>
+                            <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                                <i class="fas fa-trash text-secondary"></i>
+                            </a>
+                        </div>
+                    </CardContent>
+                </SfCard>
+            </div>
+
+
+@*                Card 8*@
+            <div class="col-lg-3 mb-3">
+                <SfCard>
+                    <CardContent>
+                        <img class="img m-0 p-0" src="/css/icons/2_logo.png" height="70" />
+                        <hr class="horizontal dark pt-0 mt-0" />
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                                <p class="text-start text-sm p-0 m-0">
+                                    Broker Name
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-lg-8 text-start">
+                                    <p class="text-start text-sm">
+                                        username
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-2 mb-2 d-flex">
+                                <h6 class="mb-0" style="font-family:'Times New Roman', Times, serif;">Enable</h6>
+                                <div class="form-switch ps-0 ms-auto my-auto">
+                                    @*<input class="form-check-input mt-1 ms-auto" type="checkbox" id="enable">*@
+                                    <SfSwitch @bind-Checked="@isUSB"></SfSwitch>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="text-end pt-2">
+                            <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                                <i class="fas fa-user-edit text-secondary"></i>
+                            </a>
+                            <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                                <i class="fas fa-trash text-secondary"></i>
+                            </a>
+                        </div>
+                    </CardContent>
+                </SfCard>
+            </div>
+
+                @* Card 9 *@
+            <div class="col-lg-3 mb-3">
+                <SfCard>
+                    <CardContent>
+                        <img class="img m-0 p-0" src="/css/icons/aliceblue.webp" height="70" />
+                        <hr class="horizontal dark pt-0 mt-0" />
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                                <p class="text-start text-sm p-0 m-0">
+                                    Broker Name
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-lg-8 text-start">
+                                    <p class="text-start text-sm">
+                                        username
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-2 mb-2 d-flex">
+                                <h6 class="mb-0" style="font-family:'Times New Roman', Times, serif;">Enable</h6>
+                                <div class="form-switch ps-0 ms-auto my-auto">
+                                    @*<input class="form-check-input mt-1 ms-auto" type="checkbox" id="enable">*@
+                                    <SfSwitch @bind-Checked="@isUSB"></SfSwitch>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="text-end pt-2">
+                            <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                                <i class="fas fa-user-edit text-secondary"></i>
+                            </a>
+                            <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                                <i class="fas fa-trash text-secondary"></i>
+                            </a>
+                        </div>
+                    </CardContent>
+                </SfCard>
+            </div>
 
 </div>
 </div>
@@ -471,6 +452,11 @@
 text-align:left;
 
         
+    }
+    .e-primary{
+    height:40px;
+    width:150px;
+    background:white;   
     }
 
     .e-card {

@@ -1,0 +1,141 @@
+﻿@layout MainLayout
+
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Cards
+
+@page "/profile"
+
+
+<div class="container">
+    <div class="row mb-3">
+
+        <div class="col-12">
+
+            <SfCard style="border-radius:10px;">
+    <CardContent>
+                <div class="row">
+                    <div class="col-3 col-lg-2">
+                        <div class="avatar avatar-xl position-relative">
+                            <img src="/css/img/team-3.jpg" class="w-100 border-radius-lg shadow-sm">
+                        </div>
+                    </div>
+                    <div class="col-9 col-lg-10">
+                        <div class="h-100">
+                            <h5 class="my-3 font-weight-bolder text-lg-start" style="font-family:'Times New Roman';">
+                                Mark Johnson
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                </CardContent>
+            </SfCard>
+            </div>
+            </div>
+            
+            <div class="row">
+            <div class="col-12 mb-3">
+
+            <SfCard style="border-radius:10px;">
+                <CardContent>
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="text-start font-weight-bold" style="font-family:'Times New Roman', Times, serif;">Basic Info</h5>
+                        </div>
+                            <div class="col-6">
+                            
+                            <label class="form-label" style="font-weight:normal;">First Name</label>
+                            <div class="form-group-text">
+                                <SfTextBox CssClass="e-outline" Placeholder="First Name" ></SfTextBox>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label" style="font-weight:normal;">Last Name</label>
+                            <div class="form-group">
+                                <SfTextBox CssClass="e-outline" Placeholder="Last Name"></SfTextBox>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <div class="col-sm-5 col-6">
+                                    <label class="form-label mt-3" style="font-weight:normal;">Birth Date</label>
+                                    <select class="form-control" name="choices-month" id="choices-month"></select>
+                                </div>
+                                <div class="col-sm-4 col-3">
+                                    <label class="form-label mt-3">&nbsp;</label>
+                                    <select class="form-control" name="choices-day" id="choices-day"></select>
+                                </div>
+                                <div class="col-sm-3 col-4">
+                                    <label class="form-label mt-3">&nbsp;</label>
+                                    <select class="form-control" name="choices-year" id="choices-year"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="form-label mt-3" style="font-weight:normal;">Email</label>
+                            <div class="form-group">
+                                <SfTextBox CssClass="e-outline" Placeholder="example@email.com" Type="InputType.Email"></SfTextBox>
+                            </div>
+                        </div>
+                      
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="form-label mt-3" style="font-weight:normal;">Your Address </label>
+                            <div class="form-group">
+                                <SfTextBox CssClass="e-outline" Placeholder="Full Address" ></SfTextBox>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label mt-3" style="font-weight:normal;">Phone Number</label>
+                            <div class="form-group">
+                                <SfTextBox CssClass="e-outline" placeholder="+41 735 631 620"></SfTextBox>
+                            </div>
+                        </div>
+                    </div>
+                    </CardContent>
+                </SfCard>
+            </div>
+<div class="col-lg-12">
+        <SfCard style="border-radius:10px;">
+
+                <CardContent>
+                    <h5 style="font-family:'Times New Roman', Times, serif;">Change Password</h5>
+                    <label class="form-label" style="font-weight:normal;">Current password</label>
+                    <div class="form-group">
+                    <SfTextBox CssClass="e-outline" Placeholder="Current Password" Type="InputType.Password"></SfTextBox>
+                    </div>
+                    <label class="form-label" style="font-weight:normal;">New password</label>
+                    <div class="form-group">
+                    
+                    <SfTextBox CssClass="e-outline" Placeholder="New Password" Type="InputType.Password"></SfTextBox>
+                    
+                </div>
+                    <label class="form-label" style="font-weight:normal;">Confirm new password</label>
+                    <div class="form-group">
+                        <SfTextBox CssClass="e-outline" Placeholder="Confirm Password" Type="InputType.Password"></SfTextBox>
+                    </div>
+                    
+                    <SfButton CssClass="e-dark">Update Password</SfButton>
+                </CardContent>                
+       
+    </SfCard>
+        </div>
+</div>
+</div>
+
+
+<style>
+
+.e-dark{
+border-radius:5px;
+height:45px;
+width:150px;
+}
+
+
+</style>

@@ -1,0 +1,93 @@
+﻿    @layout MainLayout
+    @page "/strategies"
+
+    @using Syncfusion.Blazor.Grids
+
+    @using Syncfusion.Blazor.DropDowns
+    @using System;
+    @using Syncfusion.Blazor.Inputs;
+    @using Syncfusion.Blazor.Cards;
+    @using Syncfusion.Blazor.Buttons;
+    @using System.ComponentModel.DataAnnotations;
+
+
+    <div class="container-fluid py-1">
+    <div class="row mb-3">
+    <div class="col-lg-12 mt-1">
+
+
+<SfCard style="border-radius:10px;">
+<CardContent>
+    <div class="d-lg-flex">
+                        <div class="ms-3 my-3 mt-3">
+     <h5 class="mb-0" style="font-family:'Times New Roman', Times, serif;">All Strategies</h5>
+</div>
+
+<div class="ms-auto my-3 mt-3">
+    <a href="createstrategy" class="btn bg-primary btn-sm mb-0 text-white" target="_self">+&nbsp; New Strategy</a>
+    <button class="btn btn-outline-primary btn-sm export mb-0 mt-sm-0 mt-1" data-type="csv" type="button" name="button">Export</button>
+    </div>
+    </div>
+    
+</CardContent>
+</SfCard>
+
+    </div>
+    </div>
+    
+
+    <div class="row mb-3">
+    <div class="col-12">
+<SfCard style="border-radius:10px;">
+<CardContent>
+                    <SfGrid DataSource="@Orders" AllowPaging="true" Height="315">
+                     <GridPageSettings PageSize="@pagesize"></GridPageSettings>
+                        <GridEditSettings AllowAdding="true" AllowEditing="true"  AllowDeleting="true"></GridEditSettings>
+                        <GridColumns>
+                            <GridColumn Type="ColumnType.CheckBox" Width="40"></GridColumn>
+                        <GridColumn Field=@nameof(Order.OrderID) HeaderText="Active Flag" IsPrimaryKey="true" TextAlign="TextAlign.Left" Width="120"></GridColumn>
+                        <GridColumn Field=@nameof(Order.CustomerID) HeaderText="Strategy Name" Width="120" TextAlign="TextAlign.Left"></GridColumn>
+                        <GridColumn Field=@nameof(Order.CustomerID) HeaderText=" Broker Name" EditType="EditType.DatePickerEdit" Format="d" TextAlign="TextAlign.Left" Width="120"></GridColumn>
+                        <GridColumn Field=@nameof(Order.Freight) HeaderText="Account" Format="C2"  Width="120" TextAlign="TextAlign.Left"></GridColumn>
+                        <GridColumn Field=@nameof(Order.OrderDate) Format="d" HeaderText="Last Updated" TextAlign="TextAlign.Left" Width="120"></GridColumn>
+                        <GridColumn HeaderText="Actions" Width="120" TextAlign="TextAlign.Right">
+                                <GridCommandColumns>
+                                    <GridCommandColumn Type="CommandButtonType.Edit" ButtonOption="@(new CommandButtonOptions() { IconCss = "e-icons e-edit", CssClass = "e-flat" })"></GridCommandColumn>
+                                    <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() { IconCss = "e-icons e-delete", CssClass = "e-flat" })"></GridCommandColumn>
+                                    <GridCommandColumn Type="CommandButtonType.Save" ButtonOption="@(new CommandButtonOptions() { IconCss = "e-icons e-update", CssClass = "e-flat" })"></GridCommandColumn>
+                                    <GridCommandColumn Type="CommandButtonType.Cancel" ButtonOption="@(new CommandButtonOptions() { IconCss = "e-icons e-cancel-icon", CssClass = "e-flat" })"></GridCommandColumn>
+                                </GridCommandColumns>
+                            </GridColumn>
+                        </GridColumns>
+
+                    </SfGrid>
+            </CardContent>
+        </SfCard>
+                    </div>
+    </div>
+</div>
+                    @code {
+                        public List<Order> Orders { get; set; }
+    public int pagesize { get; set; } = 8;
+                        protected override void OnInitialized()
+                        {
+                            Orders = Enumerable.Range(1, 75).Select(x => new Order()
+                {
+                    OrderID = 1000 + x,
+                    CustomerID = (new string[] { "ALFKI", "ANANTR", "ANTON", "BLONP", "BOLID" })[new Random().Next(5)],
+                    Freight = 2.1 * x,
+                    OrderDate = DateTime.Now.AddDays(-x),
+                    ShipCountry = (new string[] { "USA", "UK", "CHINA", "RUSSIA", "INDIA" })[new Random().Next(5)]
+                }).ToList();
+                        }
+
+                        public class Order
+                        {
+                            public int? OrderID { get; set; }
+                            public string CustomerID { get; set; }
+                            public DateTime? OrderDate { get; set; }
+                            public double? Freight { get; set; }
+                            public string ShipCountry { get; set; }
+                        }
+                    }
+                        

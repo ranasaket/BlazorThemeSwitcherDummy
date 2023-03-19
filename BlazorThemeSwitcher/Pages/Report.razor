@@ -1,0 +1,690 @@
+﻿@layout MainLayout
+@page "/report"
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Cards
+
+
+<div class="container-fluid mt-1">
+<div class="row mb-2">
+
+        <div class="col-lg-12 mt-lg-2 mt-2">
+            <SfCard style="border-radius:10px;">
+                <CardContent>
+                <div class="row">
+                    <div class="col-lg-9 col-5 text-start">
+                        <div class="btn-group dropdown mt-2">
+                            <button href="#" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" id="navbarDropdownMenuLink2">Strategy</button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-7 justify-content-end">
+                        <div class="form-group mt-2 w-100">
+                            <p>
+                                <input class="form-control datepicker" placeholder="Please select date" type="text" onfocus="focused(this)" onfocusout="defocused(this)" />
+                            </p>
+                        </div>
+                </div>
+                </div>
+            </CardContent>
+            </SfCard>
+            </div>
+            </div>
+
+
+<div class="row justify-content-start mb-3">
+        
+    <div class="col-lg-3 mb-2">
+            <SfCard style="border-radius:10px;">
+                <CardContent>
+                  <div class="row pt-2">
+                      <div class="col-8">
+                           <div class="numbers">
+                                        <p class="text-sm mb-0 text-uppercase font-weight-bold">Trades</p>
+                                        <h6 class="font-weight-bolder" style="font-family:'Times New Roman';">
+                                    ₹0
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-end p-1">
+                                    <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                        <p class="mb-1">
+                            <span class="text-success text-sm font-weight-bolder">+55%</span>
+                            <small class="text-xs">since last month</small>
+                            </p>
+                        </div>
+                            </div>
+                </CardContent>
+           </SfCard>
+    </div>
+
+        <div class="col-lg-3 mb-2">
+            <SfCard style="border-radius:10px;">
+                <CardContent>
+                    <div class="row pt-2">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Daily Avg</p>
+                                <h6 class="font-weight-bolder"style="font-family:'Times New Roman';">
+                                    61%
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end p-1">
+                            <div class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle">
+                                <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <p class="mb-1">
+                                <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                <small class="text-xs">since yesterday</small>
+                            </p>
+                        </div>
+
+                </div>
+             </CardContent>
+         </SfCard>
+      </div>
+
+
+        <div class="col-lg-3  mb-2">
+            <SfCard style="border-radius:10px;">
+                <CardContent>
+
+                   <div class="row pt-2 text-start">
+                       <div class="col-8">
+                           <div class="numbers">
+                               <p class="text-sm mb-0 text-uppercase font-weight-bold">Win%</p>
+                                <h6 class="font-weight-bolder" style="font-family:'Times New Roman';">
+                                            0
+                                   </h6>
+                           </div>
+                        </div>
+                       <div class="col-4 text-end p-1">
+                         <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
+                             <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                            <p class="mb-1 text-start">
+                              <span class="text-success text-sm font-weight-bolder">+55%</span>
+                              <small class="text-xs">since yesterday</small>
+                            </p>
+                        </div>
+                            </div>
+                </CardContent>
+            </SfCard> 
+        </div>
+
+
+        <div class="col-lg-3 mb-2">
+<SfCard style="border-radius:10px;">
+    <CardContent>
+                    <div class="row pt-2 text-start">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Loss%</p>
+                                <h6 class="font-weight-bolder" style="font-family:'Times New Roman';">
+                                    0
+                                </h6>
+                            </div>
+                         </div>
+                                
+                        <div class="col-4 text-end p-1">
+                          <div class="icon icon-shape bg-gradient-danger shadow-primary text-center rounded-circle">
+                             <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                            <p class="mb-1 text-start">
+                                <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                <small class="text-xs">since yesterday</small>
+                            </p>
+
+                        </div>
+                            </div>
+              </CardContent>
+            </SfCard> 
+    </div>
+
+
+    <div class="col-lg-3 col-md-6 col-12 mb-2">
+         <SfCard style="border-radius:10px;">
+            <CardContent>
+                <div class="row pt-2 text-start">
+               <div class="col-8">
+                    <div class="numbers">
+                       <p class="text-sm mb-0 text-uppercase font-weight-bold">Net P&L</p>
+                                <h6 class="font-weight-bolder" style="font-family:'Times New Roman';">0</h6>
+                    </div>
+               </div>
+               <div class="col-4 text-end p-1">
+                    <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle ">
+                       <i class="ni ni-collection text-lg opacity-10" aria-hidden="true"></i>
+                          </div>
+                </div>
+                <div class="col-12">
+                     <p class="mb-1 text-start">
+                       <span class="text-success text-sm font-weight-bolder">+55%</span>
+                       <small class="text-xs">since yesterday</small>
+                            </p>
+                </div> 
+                </div> 
+            </CardContent>
+          </SfCard> 
+     </div>
+@*                </div>
+        <div class="row justify-content-center">*@
+        <div class="col-lg-3 mb-2">
+            <SfCard style="border-radius:10px;">
+                <CardContent>
+                    <div class="row pt-2">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Win</p>
+                                <h6 class="font-weight-bolder" style="font-family:'Times New Roman';">₹0</h6>
+                          </div>
+                        </div>
+                        <div class="col-4 text-end p-1">
+                             <div class="icon icon-shape bg-info shadow-primary text-center rounded-circle">
+                                 <i class="ni ni-trophy text-lg opacity-10" aria-hidden="true"></i>
+                             </div>
+                         </div>
+                        <div class="col-12">
+                            <p class="mb-1 text-start">
+                                <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                <small class="text-xs">since yesterday</small>
+                            </p>
+                        </div>
+                     </div>
+                </CardContent>
+            </SfCard>                    
+         </div>
+
+<div class="col-lg-3 mb-2">
+    <SfCard style="border-radius:10px;">
+        <CardContent>
+            <div class="row pt-2">
+                 <div class="col-8">
+                     <div class="numbers">
+                        <p class="text-sm mb-0 text-uppercase font-weight-bold">Loss</p>
+                            <h6 class="font-weight-bolder" style="font-family:'Times New Roman';">
+                                    ₹0
+                            </h6>
+                     </div>
+                 </div>
+                <div class="col-4 text-end p-1">
+                    <div class="icon icon-shape bg-warning shadow-primary text-center rounded-circle">
+                        <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+                     </div>
+                </div>
+            <div class="col-12">
+                 <p class="mb-1 text-start">
+                       <span class="text-success text-sm font-weight-bolder">+55%</span>
+                       <small class="text-xs">since yesterday</small>
+                 </p>
+             </div>
+            </div>
+        </CardContent>
+            </SfCard>
+    </div>
+
+
+        <div class="col-lg-3 mb-2">
+           <SfCard style="border-radius:10px;">
+                <CardContent>
+                    <div class="row pt-2">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Avg Profit</p>
+                                <h6 class="font-weight-bolder" style="font-family:'Times New Roman';">
+                                    ₹0
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end p-1">
+                                        <div class="icon icon-shape bg-danger shadow-danger text-center rounded-circle">
+                                            <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                            <p class="mb-1 text-start">
+                                <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                <small class="text-xs">since yesterday</small>
+                            </p>
+
+                        </div>
+                    </div>
+                </CardContent>
+            </SfCard>
+         </div>
+
+
+        <div class="col-lg-3 mb-2">
+            <SfCard style="border-radius:10px;">
+                <CardContent>
+                    <div class="row pt-2">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Max Profit</p>
+                                <h6 class="font-weight-bolder" style="font-family:'Times New Roman';">
+                                    ₹0
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end p-1">
+                                        <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                                            <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                        </div>
+                        </div>
+                        <div class="col-12">
+                            <p class="mb-1 text-start">
+                                <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                <small class="text-xs">since yesterday</small>
+                            </p>
+                        </div>
+                   </div>
+                </CardContent>
+            </SfCard>
+        </div>
+
+
+        <div class="col-lg-3 mb-2">
+            <SfCard style="border-radius:10px;">
+                <CardContent>
+                    <div class="row pt-2">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Max Loss</p>
+                                <h6 class="font-weight-bolder" style="font-family:'Times New Roman';">
+                                    ₹0
+                                </h6>
+                            </div>
+                        </div>
+                        
+                        <div class="col-4 text-end p-1">
+                            <div class="icon icon-shape bg-gradient-info shadow-primary text-center rounded-circle ">
+                                  <i class="ni ni-book-bookmark text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <p class="mb-1 text-start">
+                                <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                <small class="text-xs">since yesterday</small>
+                            </p>
+
+                        </div>
+                </div>
+              </CardContent>
+             </SfCard>
+         </div>
+   
+     </div>
+  </div>
+    
+
+            
+<div class="row justify-content-center  px-3">
+
+<div class="col-lg-4 mb-lg-2 px-3 mb-2">
+<SfCard style="border-radius:10px;">
+<CardHeader>
+<h6 class="text-capitalize">Overview</h6>
+<p class="text-sm mb-0">
+<i class="fa fa-arrow-up text-success"></i>
+
+</p>
+</CardHeader>
+<CardContent>
+<div class="chart">
+ <canvas id="chart-line" class="chart-canvas" height="300" width="251" style="display:block; box-sizing: border-box; height: 250px; width: 251px;"></canvas>
+ </div>
+ </CardContent>
+</SfCard>
+</div>
+
+ <div class="col-lg-5 mb-lg-2 mx-0 px-3 mb-2">
+       <div class="card">
+            <div class="card-body">
+                 <div class="table-responsive">
+                     <table class="table align-items-center mb-0">
+                           <thead>
+                                <tr>
+                                    <th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Date</th>
+                                    <th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7 ps-2">Strategy</th>
+                                    <th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7 ps-2">Net P & L</th>
+                                    <th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7 ps-2">Qty</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex px-2">
+                                            <div class="my-auto">
+                                                <h6 class="mb-0 text-xs">Spotify</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="text-xs font-weight-bold mb-0">$2,500</p>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot me-4">
+                                            <i class="bg-success"></i>
+                                        <span class="text-dark text-xs">done</span>
+                                        </span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-2 text-xs">60%</span>
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex px-2">
+
+                                            <div class="my-auto">
+                                                <h6 class="mb-0 text-xs">Invision</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="text-xs font-weight-bold mb-0">$5,000</p>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot me-4">
+                                            <i class="bg-success"></i>
+                                            <span class="text-dark text-xs">done</span>
+                                        </span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-2 text-xs">100%</span>
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex px-2">
+
+                                                    <div class="my-auto">
+                                                        <h6 class="mb-0 text-xs">Jira</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">$3,400</p>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-dot me-4">
+                                                    <i class="bg-danger"></i>
+                                        <span class="text-dark text-xs">cancelled</span>
+                                                </span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <div class="d-flex align-items-center">
+                                                    <span class="me-2 text-xs">30%</span>
+
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex px-2">
+
+                                            <div class="my-auto">
+                                                <h6 class="mb-0 text-xs">Jira</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="text-xs font-weight-bold mb-0">$3,400</p>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot me-4">
+                                            <i class="bg-danger"></i>
+                                        <span class="text-dark text-xs">cancelled</span>
+                                        </span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-2 text-xs">30%</span>
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex px-2">
+
+                                            <div class="my-auto">
+                                                <h6 class="mb-0 text-xs">Slack</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="text-xs font-weight-bold mb-0">$1,000</p>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot me-4">
+                                            <i class="bg-danger"></i>
+                                        <span class="text-dark text-xs">cancelled</span>
+                                        </span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-2 text-xs">0%</span>
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex px-2">
+
+                                            <div class="my-auto">
+                                                <h6 class="mb-0 text-xs">Webdev</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="text-xs font-weight-bold mb-0">$14,000</p>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot me-4">
+                                            <i class="bg-success"></i>
+                                        <span class="text-dark text-xs">done</span>
+                                        </span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-2 text-xs">80%</span>
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex px-2">
+
+                                            <div class="my-auto">
+                                                <h6 class="mb-0 text-xs">Adobe XD</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="text-xs font-weight-bold mb-0">$2,300</p>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-dot me-4">
+                                            <i class="bg-success"></i>
+                                            <span class="text-dark text-xs">done</span>
+                                        </span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-2 text-xs">100%</span>
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<div class="col-lg-3 mb-3 px-2">
+<div class="card">
+<div class="table-responsive">
+<table class="table align-items-center mb-0">
+<thead>
+<tr>
+<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Strategy</th>
+<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Net P&L</th>
+
+ </tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="d-flex px-2 py-1">
+
+<div class="d-flex flex-column justify-content-center">
+<h6 class="mb-0 text-xs">John Michael</h6>
+</div>
+</div>
+</td>
+<td>
+                                        <span class="badge badge-dot me-4">
+                                            <i class="bg-success"></i>
+                                            <span class="text-dark text-xs">done</span>
+                                        </span>
+                                    </td>
+
+</tr>
+<tr>
+<td>
+<div class="d-flex px-2 py-1">
+
+<div class="d-flex flex-column justify-content-center">
+<h6 class="mb-0 text-xs">Alexa Liras</h6>
+
+</div>
+</div>
+</td>
+<td>
+                                <span class="badge badge-dot me-4">
+                                    <i class="bg-danger"></i>
+                                    <span class="text-dark text-xs">Cancelled</span>
+                                </span>
+                            </td>
+
+</tr>
+<tr>
+<td>
+<div class="d-flex px-2 py-1">
+
+<div class="d-flex flex-column justify-content-center">
+<h6 class="mb-0 text-xs">Laurent Perrier</h6>
+
+</div>
+</div>
+</td>
+<td>
+                                        <span class="badge badge-dot me-4">
+                                            <i class="bg-success"></i>
+                                            <span class="text-dark text-xs">done</span>
+                                        </span>
+                                    </td>
+
+</tr>
+<tr>
+<td>
+<div class="d-flex px-2 py-1">
+
+<div class="d-flex flex-column justify-content-center">
+<h6 class="mb-0 text-xs">Michael Levi</h6>
+
+</div>
+</div>
+</td>
+                            <td>
+                                <span class="badge badge-dot me-4">
+                                    <i class="bg-danger"></i>
+                                    <span class="text-dark text-xs">Cancelled</span>
+                                </span>
+                            </td>
+
+</tr>
+<tr>
+<td>
+<div class="d-flex px-2 py-1">
+
+<div class="d-flex flex-column justify-content-center">
+<h6 class="mb-0 text-xs">Richard Gran</h6>
+
+</div>
+</div>
+</td>
+                            <td>
+                                <span class="badge badge-dot me-4">
+                                    <i class="bg-danger"></i>
+                                    <span class="text-dark text-xs">Cancelled</span>
+                                </span>
+                            </td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+            </div>
+       
+
+@*@code {
+    public List<report> Subscriptions { get; set; }
+    protected override void OnInitialized()
+    {
+        Subscriptions = Enumerable.Range(0, 1).Select(x => new report()
+            {
+                OrderID = 1000 + x,
+                CustomerID = (new string[] { "ALFKI", "ANANTR", "ANTON", "BLONP", "BOLID" })[new Random().Next(5)],
+                Freight = 2.1 * x,
+                OrderDate = DateTime.Now.AddDays(-x),
+                ShipCountry = (new string[] { "USA", "UK", "CHINA", "RUSSIA", "INDIA" })[new Random().Next(5)]
+            }).ToList();
+    }
+
+    public class report
+    {
+        public int? OrderID { get; set; }
+        public string CustomerID { get; set; }
+        public DateTime? OrderDate { get; set; }
+        public double? Freight { get; set; }
+        public string ShipCountry { get; set; }
+    }
+}*@

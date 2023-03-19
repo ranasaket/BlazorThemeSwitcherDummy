@@ -1,0 +1,418 @@
+﻿@layout MainLayout
+@page "/oew"
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Cards
+@using Syncfusion.Blazor.DropDowns
+
+
+<div class="container-fluid py-1">
+    <div class="row mb-2 py-0 justify-content-start">
+
+        <div class="col-lg-3 mb-2">
+
+            <SfCard style="border-radius:15px;">
+                <CardContent>
+                    <div class="row pt-2">
+                        <div class="col-8 px-1">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Active</p>
+                                <h6 class="font-weight-bolder">
+                                    0
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end p-1">
+                            <div class="icon icon-shape bg-primary shadow-primary text-center rounded-circle">
+                                <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <p class="mb-1 text-start">
+                                <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                <small class="text-xs">since yesterday</small>
+                            </p>
+
+                        </div>
+                    </div>
+                </CardContent>
+            </SfCard>
+        </div>
+
+
+        <div class="col-lg-3 mb-2">
+            <SfCard style="border-radius:15px;">
+                <CardContent>
+ 
+                    <div class="row pt-2">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Completed</p>
+                                <h6 class="font-weight-bolder">
+                                    0
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end p-1">
+                            <div class="icon icon-shape bg-success shadow-success text-center rounded-circle">
+                                <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <p class="mb-1 text-start">
+                                <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                <small class="text-xs">since yesterday</small>
+                            </p>
+
+                        </div>
+                    </div>
+                </CardContent>
+            </SfCard>
+        </div>
+
+
+        <div class="col-lg-3 mb-2">
+            <SfCard style="border-radius:15px;">
+                <CardContent>
+                    <div class="row pt-2">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Failed</p>
+                                            <h6 class="font-weight-bolder">
+                                                ₹0
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-end p-1">
+                                        <div class="icon icon-shape bg-warning shadow-primary text-center rounded-circle">
+                                            <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                        <div class="col-12">
+                            <p class="mb-1 text-start">
+                                <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                <small class="text-xs">since yesterday</small>
+                            </p>
+
+                        </div>
+                                </div>
+                            </CardContent>
+                        </SfCard>
+                    </div>
+
+
+        <div class="col-lg-3 mb-2">
+
+            <SfCard style="border-radius:15px;">
+                <CardContent>
+                    <div class="row pt-2">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Realised</p>
+                                <h6 class="font-weight-bolder">
+                                    0
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end p-1">
+                            <div class="icon icon-shape bg-info shadow-info text-center rounded-circle">
+                                <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <p class="mb-1 text-start">
+                                <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                <small class="text-xs">since yesterday</small>
+                            </p>
+
+                        </div>
+                    </div>
+                </CardContent>
+            </SfCard>
+        </div>
+
+
+        <div class="col-lg-3 mb-2">
+            <SfCard style="border-radius:15px;">
+                <CardContent>
+                    <div class="row pt-2">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Unrealised</p>
+                                <h6 class="font-weight-bolder">
+                                    0
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end p-1">
+                            <div class="icon icon-shape bg-danger shadow-primary text-center rounded-circle">
+                                <i class="ni ni-book-bookmark text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <p class="mb-1 text-start">
+                                <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                <small class="text-xs">since yesterday</small>
+                            </p>
+
+                        </div>
+                    </div>
+                    
+                </CardContent>
+            </SfCard>
+        </div>
+        </div>
+
+
+        <div class="row justify-content-center py-1">
+        <div class="col-lg-12 mb-4">
+  
+            <SfCard style="border-radius:15px;">
+
+                <CardContent>
+                    <div class="px-1">
+                                  <SfButton CssClass="e-primary">All</SfButton>
+                        <div class="btn-group dropdown">
+                            <button class="btn btn-primary dropdown-toggle m-2 font-weight-normal" data-bs-toggle="dropdown" id="navbarDropdownMenuLink2">Action</button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <li><a class="dropdown-item" href="#">Terminate</a></li>
+                                                <li><a class="dropdown-item" href="#">Square Off</a></li>
+                                                <li><a class="dropdown-item" href="#"> Open now(Entry)</a></li>
+                                                <li><a class="dropdown-item" href="#"> Retry Failed Legs</a></li>
+                                            </ul>
+                                        </div>
+                        @* <SfDropDownList TValue="string" TItem="opt" PopupHeight="350px" PopupWidth="150px" Placeholder="Select" DataSource="@LData">
+                            <DropDownListFieldSettings Value="ID" Text="Text">
+
+                            </DropDownListFieldSettings>
+                        </SfDropDownList>
+                        *@
+                        <SfButton CssClass="e-normal" disabled>Run</SfButton>
+                              
+                        </div>
+                        </CardContent>
+                        <hr class="horizontal dark"/>
+
+                <CardContent>
+                    <div class="table-responsive pt-0 mb-0">
+                        <table class="table align-items-center">
+                                <thead>
+                                <tr>
+                                    <th class="text-uppercase text-dark text-xxs font-weight-bolder">Strategy Name</th>
+                                    <th class="text-uppercase  text-dark text-xxs font-weight-bolder ">Broker Name</th>
+                                    <th class="text-uppercase  text-dark text-xxs font-weight-bolder ">Account</th>
+                                    <th class="text-uppercase  text-dark text-xxs font-weight-bolder">Profit/Loss</th>
+                                    <th class="text-uppercase  text-dark text-xxs font-weight-bolder">Status</th>
+                                    <th class="text-uppercase  text-dark text-xxs font-weight-bolder ps-2">Last Updated</th>
+                                    <th class="text-uppercase  text-dark text-xxs font-weight-bolder ps-2"></th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 font-weight-normal text-xs">John Michael</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 font-weight-normal text-xs">John Michael</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+
+                                            <div class="d-flex flex-column justify-content-center">
+                                            </div>
+                                                <h6 class="mb-0 text-xs font-weight-normal">John Michael</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 text-xs font-weight-normal">John Michael</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 text-xs font-weight-normal">John Michael</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <p class="text-xs font-weight-normal mb-0">Manager</p>
+                                    </td>
+                                    
+                                    <td class="pt-3">
+                                        <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#ordermodel">Order</button>
+                                       
+                                    </td>
+                                   
+
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 text-xs font-weight-normal">Alexa Liras</h6>
+
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                                                       
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 text-xs font-weight-normal">John Michael</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 text-xs font-weight-normal">John Michael</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 text-xs font-weight-normal">John Michael</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 text-xs font-weight-normal">John Michael</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <p class="text-xs font-weight-normal mb-0">Programator</p>
+
+                                    </td>
+                                    <td class="pt-3">
+                                        <button type="button" class="btn btn-primary w-100">Order</button>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                             </CardContent>
+            </SfCard>
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+<div class="modal fade bd-example-modal-lg" id="ordermodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Order Execution Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-group bg-gray-200 rounded shadow-sm">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-4 pt-3 w-100">
+                            <div class="table-responsive">
+                                <table class="table align-items-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-xxs font-weight-bolder">Ordeer Id</th>
+                                            <th class="text-xxs font-weight-bolder">Status</th>
+                                            <th class="text-xxs font-weight-bolder">Last Updated Time</th>
+                                            <th class="text-xxs font-weight-bolder">Symbol</th>
+                                            <th class="text-xxs font-weight-bolder">Direction</th>
+                                            <th class="text-xxs font-weight-bolder">Order Type</th>
+                                            <th class="text-xxs font-weight-bolder">Trigger Price</th>
+                                            <th class="text-xxs font-weight-bolder">Limit Price</th>
+                                            <th class="text-xxs font-weight-bolder">Filled Price</th>
+                                            <th class="text-xxs font-weight-bolder">Filled Quantity</th>
+                                            <th class="text-xxs font-weight-bolder">Profit/Loss</th>
+                                            <th class="text-xxs font-weight-bolder">Active</th>
+                                            <th class="text-xxs font-weight-bolder">Broker Order Id</th>
+                                            <th class="text-xxs font-weight-bolder">Broker Execution Time</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    </tbody>
+
+
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn text-white" data-bs-dismiss="modal" style="background-color: #f44336;">Close</button>
+            </div>
+        </div>
+    </div>
+</div> 
+<style>
+    .e-primary{
+        border-radius:10px;
+    width:80px;
+    height:40px;
+    }
+    
+    .e-normal{
+        border-radius: 10px;
+    width:80px;
+    height:40px;
+    }
+
+
+</style>
+@code
+{
+    public class opt
+    {
+        public string ID { get; set; }
+        public string Text { get; set; }
+    }
+    List<opt> LData = new List<opt> {
+new opt() { ID= "opt1", Text= "Terminate" },
+new opt() { ID= "opt2", Text= "Square Off" },
+new opt() { ID= "opt3", Text= "Open now(Entry)" },
+new opt() { ID= "opt4", Text= "Retry Failed Legs" },
+  };
+}
