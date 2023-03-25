@@ -1,0 +1,518 @@
+﻿
+@page "/createbroker"
+@using System.ComponentModel.DataAnnotations
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Cards
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.SplitButtons
+
+
+
+<div class="container-fluid pt-3">
+    <div class="row mb-3">
+        <div class="col-lg-12 mt-lg-4 mt-4">
+            <SfCard style="border-radius:10px;">
+                <CardContent>
+                    <div class="row">
+                        <div class="col-sm-4 col-lg-2 ">
+                            <div class="avatar avatar-xl position-relative">
+                                <img src="/css/img/team-3.jpg" alt="bruce" class="w-100 border-radius-lg shadow-sm">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-6 ">
+                            <h5 class=" text-dark mb-1 text-lg-start m-3" style="font-family:'Times New Roman';">
+                                Create Account
+                            </h5>
+                        </div>
+
+                    </div>
+                </CardContent>
+            </SfCard>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        
+        <div class="card-body">
+            <EditForm Model="@test">
+                <DataAnnotationsValidator />
+
+                <h6 class="heading-small text-muted mb-4">Account information</h6>
+               
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group ">
+                                <label class="form-control-label" for="input-username">Broker Name</label>
+                                <select class="form-control " name="choices-button" id="choices-button" @onchange=ChangeSelection @bind-value="@selectedBrokerID.Value" @bind-value:event="oninput" required>
+                                    @foreach (var Broker in BrokerList)
+                                    {
+                                        <option value="@Broker.Code"> @Broker.Name </option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label" for="input-email">User Name</label>
+
+                            <InputText id="input-email" class="form-control mb-2" @bind-Value="@test.username" placeholder="username"/>
+                            <small class="text-xs text-warning">
+                                <ValidationMessage For="@(() => test.username)" />
+                                </small>
+                            </div>
+                        </div>
+                    
+
+                        <div class="col-lg-6 mb-3">
+                            <label class="form-control-label" for="input-password">Password</label>
+                        <div class="input-group mb-2">
+
+                            <InputText type="@buttontype" @bind-Value="@test.password" class="form-control " placeholder="Password" />
+                                <i class="fa @i_eye input-group-text rounded" @onclick="testclick" style="margin-left:-10px;"></i>
+
+                            </div>
+
+                            <small class="text-warning text-xs"><ValidationMessage For="@(() => test.password)" /></small>
+
+                        </div>
+
+
+                        @if (hideValue)
+                        {
+                            <div class="col-lg-6">
+                                <label class="form-control-label" for="input-last-name">TOTP QRCode</label>
+                            <div class="input-group mb-2">
+
+                                    <InputText type="@buttontype2" id="input-last-name" class="form-control" @bind-Value="@test.totp_flag" placeholder="TOTP QRCode" />
+                                    <i class="fa @i_eye2 input-group-text rounded" @onclick="testclick2" style="margin-left:-10px;"></i>
+
+                                </div>
+                                <small class="text-xs text-warning"><ValidationMessage For="@(() => test.totp_flag)" /></small>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-api-key">API Key</label>
+                                    <InputText type="text" id="input-api-key" class="form-control mb-2" @bind-Value="@test.api_key" placeholder="API Key" />
+                                    <small class="text-xs text-warning"><ValidationMessage For="@(() => test.api_key)" /></small>
+                                </div>
+                            </div>
+                        }
+
+
+                        @if (hideValue2)
+                        {
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-last-name">IMEI</label>
+                                    <InputText type="@buttontype" id="input-last-name" class="form-control mb-2" @bind-Value="@test.imei" placeholder="IMEI" />
+                                    <small class="text-xs text-warning"><ValidationMessage For="@(() => test.imei)" /></small>
+                                </div>
+                            </div>
+                        }
+                        @if (hideValue3)
+                        {
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-last-name">Year Of Birth</label>
+                                    <InputText type="number" id="input-birth-year" class="form-control mb-2" @bind-Value="@test.yearofbirth" placeholder="Year of birth" />
+                                    <small class="text-xs text-warning"><ValidationMessage For="@(() => test.yearofbirth)" /></small>
+                                </div>
+                            </div>
+                        }
+                        @if (hideValue4)
+                        {
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-api-secret">API Secret</label>
+                                    <InputText type="@buttontype2" id="input-api-secret" class="form-control mb-2" @bind-Value="@test.api_secret" placeholder="API Secret" />
+                                    <small class="text-xs text-warning">
+                                        <ValidationMessage For="@(() => test.api_secret)" />
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-api-secret">API Key</label>
+                                    <InputText type="@buttontype" id="input-api-secret" class="form-control mb-2" @bind-Value="@test.api_key" placeholder="API Key" />
+                                    <small class="text-xs text-warning"><ValidationMessage For="@(() => test.api_key)" /></small>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" @onchange="@(() => UpdatePercentage(0))" id="inlineRadio1" value="totp" />
+                                    <label class="form-check-label" for="inlineRadio1">TOTP QRCode</label>
+
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" @onchange="@(() => UpdatePercentage(1))" value="pin" checked>
+                                    <label class="form-check-label" for="inlineRadio2">PIN</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+
+                                        <button class="btn btn-primary" type="submit">Authenticate</button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            @if (hideValue5)
+                            {
+                                 <div class="col-lg-6 mb-3">
+                                <label class="form-control-label" for="input-last-name">TOTP QRCode</label>
+                            <div class="input-group mb-2">
+
+                                    <InputText type="@buttontype2" id="input-last-name" class="form-control" @bind-Value="@test.totp_flag" placeholder="TOTP QRCode" />
+                                    <i class="fa @i_eye2 input-group-text rounded" @onclick="testclick2" style="margin-left:-10px;"></i>
+
+                                </div>
+                                <small class="text-xs text-warning"><ValidationMessage For="@(() => test.totp_flag)" /></small>
+                            </div>
+
+                            }
+                            else
+                            {
+                                <div class="col-lg-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-pin">PIN</label>
+                                        <InputText type="@buttontype" id="input-pin" class="form-control mb-2" @bind-Value="@test.pin" placeholder="PIN" />
+                                        <small class="text-xs text-warning">
+                                            <ValidationMessage For="@(() => test.pin)" />
+                                        </small>
+                                    </div>
+                                </div>
+                            }
+                        }
+
+
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <button class="btn btn-warning" type="submit">Verify</button>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </div>
+                <hr class="horizontal dark my-4">
+
+            </EditForm>
+        </div>
+
+    </div>
+        <div class="row mb-2">
+
+        <div class="col-lg-12">
+
+                <SfCard style="border-radius:10px;">
+                    <CardContent>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h5 style="font-family:'Times New Roman', Times, serif;">Advance Configurations</h5>
+                    </div>
+
+
+                        <div class="col-lg-12">
+                        <div class="row text-start justify-content-start mx-2">
+                                <div class="col-lg-6">
+                                    <div class="form-group input-group-outline mb-3">
+                                        <label for="example-text-input" class="form-control-label" style="font-weight:normal;"> Send Alert when Loss Hits: 10,000</label>
+                                        <SfTextBox CssClass="e-outline" Placeholder="pnl_loss_threshold"></SfTextBox>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group input-group-outline mb-3">
+                                        <label for="example-text-input" class="form-control-label" style="font-weight:normal;"> Send Alert when Profit Hits: 10,000</label>
+                                        <SfTextBox CssClass="e-outline" Placeholder="pnl_profit_threshold"></SfTextBox>
+                                    </div>
+                                </div>
+
+
+
+                        </div>
+                    </div>
+
+
+
+                        <div class="col-lg-4">
+                            <div class="form-check form-switch" style="margin-left:0px;padding-left:0px;">
+                                <SfSwitch @bind-Checked="@isChecked"></SfSwitch>
+
+                                <label style="margin-left:15px; font-weight:normal;">
+                            Squareoff_on_loss (Square-off when Loss Threshold is Hit)
+                        </label>
+
+                    </div>
+                    </div>
+
+
+                        <div class="col-lg-4 ">
+                            <div class="form-check form-switch" style="margin-left:0px;padding-left:0px;">
+                                <SfSwitch @bind-Checked="@isChecked" >
+                                
+                                </SfSwitch>
+                        
+                            <label style="margin-left:15px;font-weight:normal;">
+
+                            Squareoff_on_profit (Square-off when Profit Threshold is Hit)
+                        </label>
+                            </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                            <div class="form-check form-switch" style="margin-left:0px;padding-left:0px;">
+                                <SfSwitch @bind-Checked="@isChecked"> </SfSwitch>
+                                <label style="margin-left:15px;font-weight:normal;">
+                           Subscribe to Daily Trading Account PNL Summary
+
+                        </label>
+
+                    </div>
+
+
+                </div>
+                </div>
+
+                                    </CardContent>
+
+                </SfCard>
+
+
+        </div>
+    </div>
+</div>
+@code {
+    private string checkedValue = "One";
+    private bool isChecked = true;
+
+    NameValue selectedBrokerID = new NameValue();
+
+
+    NameValue selectedRadioValue = new NameValue();
+    Account test = new Account();
+
+    bool hidePassword = true;
+    bool hideValue = false;
+    bool hideValue2 = false;
+    bool hideValue3 = false;
+    bool hideValue4 = false;
+    bool hideValue5 = false;
+    private string username = "";
+    private string email = "";
+    private string password = "";
+    private string api_key = "";
+    private string selectedAccount = "";
+    private string selectedDep = "";
+    private string buttontype = "password";
+    private string buttontype2 = "password";
+    private string i_eye = "fa-eye-slash";
+    private string i_eye2 = "fa-eye-slash";
+
+    List<Broker> BrokerList = new List<Broker>()
+    {
+
+        new Broker("AL", "Alice"),
+        new Broker("ANG", "Angel"),
+        new Broker("ZER", "Zerodha"),
+        new Broker("FIN", "Finvasia")
+    };
+
+    protected override void OnInitialized()
+    {
+        selectedBrokerID.Value = "AL";
+        ChangeSelection();
+    }
+
+    public void testclick()
+    {
+
+        if (hidePassword)
+        {
+            i_eye = "fa-eye";
+            hidePassword = false;
+            buttontype = "text";
+
+        }
+        else
+        {
+
+            i_eye = "fa-eye-slash";
+            hidePassword = true;
+            buttontype = "password";
+        }
+
+
+    }
+    public void testclick2()
+    {
+        if (hidePassword)
+        {
+            i_eye2 = "fa-eye";
+            hidePassword = false;
+            buttontype2 = "text";
+        }
+        else
+        {
+            i_eye2 = "fa-eye-slash";
+            hidePassword = true;
+            buttontype2 = "password";
+        }
+
+
+    }
+
+
+    public void UpdatePercentage(int perc)
+    {
+        if (perc == 0)
+        {
+            hideValue5 = true;
+        }
+        else
+        {
+            hideValue5 = false;
+
+        }
+
+    }
+
+    public void ChangeSelection()
+    {
+        if (selectedBrokerID.Value == "FIN")
+        {
+            hideValue = true;
+            hideValue2 = true;
+            hideValue3 = false;
+            hideValue4 = false;
+        }
+
+        else if (selectedBrokerID.Value == "AL")
+        {
+            hideValue = true;
+            hideValue2 = false;
+            hideValue4 = false;
+            hideValue3 = true;
+
+        }
+
+        else if (selectedBrokerID.Value == "ZER")
+        {
+            hideValue = false;
+            hideValue2 = false;
+            hideValue3 = false;
+            hideValue4 = true;
+
+        }
+
+        else
+        {
+            hideValue = true;
+            hideValue2 = false;
+            hideValue4 = false;
+            hideValue3 = true;
+
+        }
+
+    }
+
+    public class Broker
+    {
+
+        public Broker(string code, string name)
+        {
+            Code = code;
+            Name = name;
+        }
+        public string Code { get; set; }
+        public string Name { get; set; }
+
+    }
+
+    class NameValue
+    {
+        public string Name { get; set; }
+        public string Value { get; set; }
+    }
+
+
+    private async Task SaveAsync()
+    {
+        var value = test;
+
+
+    }
+
+    public class Account
+    {    
+
+        [Required(ErrorMessage = "UserName is mandatory and should not be exceeding 10 characters")]
+        [MaxLength(10)]
+        public string username{ get;set; }
+
+        [Required]
+        public string password
+        {
+            get;
+            set;
+        }
+
+        [Required(ErrorMessage = "imei is mandatory")]
+        public string imei
+        {
+            get;
+            set;
+        }
+        [Required]
+        public string pin
+        {
+            get;
+            set;
+        }
+
+        [Required(ErrorMessage = "Birth Year is mandatory")]
+        public string yearofbirth
+        {
+            get;
+            set;
+        }
+
+        [Required(ErrorMessage = "API key is mandatory")]
+        public string api_key
+        {
+            get;
+            set;
+        }
+
+
+        [Required(ErrorMessage = "API ID is mandatory")]
+        public string app_id
+        {
+            get;
+            set;
+        }
+
+        [Required(ErrorMessage = "API secret is mandatory")]
+        public string api_secret
+        {
+            get;
+            set;
+        }
+
+        [Required(ErrorMessage = "TOTP field is mandatory")]
+        public string totp_flag
+        {
+            get;
+            set;
+        }
+
+        public bool active_flag
+        {
+            get;
+            set;
+        }
+
+
+    }
+}

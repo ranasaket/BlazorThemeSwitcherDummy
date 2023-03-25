@@ -21,7 +21,8 @@
                     <EditForm Model="@loginmodal" OnValidSubmit="SaveAsync">
                         <DataAnnotationsValidator />
                         <div class="form-group input-group-outline mb-3">
-                            <SfTextBox CssClass="e-outline" @bind-Value="@loginmodal.Email" Placeholder="Email Address" Type="InputType.Email"></SfTextBox>
+                            @*<SfTextBox CssClass="e-outline" @bind-Value="@loginmodal.Email" Placeholder="Email Address" Type="InputType.Email"></SfTextBox>*@
+                            <input type="text" @bind-value="@loginmodal.Email" Placeholder="Email Address"></input>
                             <ValidationMessage For="@(() => loginmodal.Email)" />
                         </div>
                         <div class="form-group input-group-outline mb-3">
