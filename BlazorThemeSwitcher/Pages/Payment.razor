@@ -1,0 +1,239 @@
+﻿@*@layout LoginLayout
+*@
+@page "/payment"
+
+
+<div class="container position-relative">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h3 class="mt-1 text-white">Complete Your Payment</h3>
+            @*           <h5 class="text-white font-weight-normal">This information will help you to get started.</h5>
+            *@           <div class="multisteps-form mb-5">
+
+                <div class="row mt-4">
+                    <div class="col sm-8 col-lg-8 mx-auto my-5">
+                        <div class="multisteps-form__progress">
+                            <button class="multisteps-form__progress-btn js-active" type="button" title="New Plan">
+                                <span style="color:white;font-weight: bold;">New Plan</span>
+                            </button>
+                            <button class="multisteps-form__progress-btn" type="button" title="Final Payment">
+                                <span style="color:white;font-weight: bold;">Final Payment</span>
+                            </button>
+                            <button class="multisteps-form__progress-btn" type="button" title="payment">
+                                <span style="color:white;font-weight: bold;">Payment </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-5 col-lg-8 m-auto">
+                        <form class="multisteps-form__form">
+
+                            <div class="card multisteps-form__panel p-2 border-radius-xl bg-white js-active" data-animation="FadeIn">
+                                <div class="row text-center">
+                                    <div class="col-lg-12 mx-auto mt-1">
+                                        <h5 class="font-weight-bold">Plan Details</h5>
+                                        
+                                    </div>
+                                </div>
+                                <hr class="horizontal dark" />
+                                <div class="multisteps-form__content">
+                                                                    
+
+                                    <div class="row pt-0">
+                                        <div class="col-12">
+
+@*                                            <p class="text-start mx-1">You choose the Basic Plan.</p>
+*@
+                                            <h6 class="text-start mx-1 text-sm">Current plan-Trial.</h6>
+                                            <h6 class="text-start mx-1 text-sm">
+                                                On Payment Complition of Rs.250 new validity till 03/04/2023
+                                            </h6>
+                                            
+                                        </div>
+                                        <div class="col-3 text-start mx-2">
+                                            <div class="form-group">
+                                                <label class="form-label text-start">Legs</label>
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                    <option active>Select</option>
+                                                    <option>Option1</option>
+                                                    <option>Option2</option>
+                                                    <option>Option3</option>
+                                                    <option>Option4</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 ms-auto mx-2">
+                                            <div class="form-group">
+                                                <label class="form-label text-start">Month</label>
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                    <option active>Select</option>
+                                                    <option>1</option>
+                                                    <option>3</option>
+                                                    <option>6</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="button-row d-flex mt-4 mb-3">
+                                        <button @onclick="testclick">Cancel</button>
+@*                                        <button class="btn bg-gradient-danger toast-btn mb-0 " type="button" data-target="failToast">Cancel</button>
+*@                                        <button class="btn btn-primary ms-auto mb-0 js-btn-next start-left" type="button" title="Next">Next</button>
+                                    </div>
+                                    <div class="position-fixed bottom-1 end-1 z-index-2">
+                                        <div class="toast fade hide p-2 bg-danger" role="alert" aria-live="assertive" id="failToast" aria-atomic="true">
+                                            <div class="toast-header border-0 bg-danger ">
+                                                <i class="ni ni-check-bold text-white me-2"></i>
+                                                <span class="me-auto font-weight-bold text-white">Payment Cancel</span>
+                                                <small class="text-white">0 min ago</small>
+                                                <i class="fas fa-times text-md ms-3 cursor-pointer text-white" data-bs-dismiss="toast" aria-label="Close"></i>
+                                            </div>
+                                            <hr class="horizontal dark m-0">
+                                            <div class="toast-body bg-danger text-white">
+                                                Payment cancelled.
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card multisteps-form__panel p-2 border-radius-xl bg-white" data-animation="FadeIn">
+                                <div class="row text-center">
+                                    <div class="col-lg-12 mx-auto">
+                                        <h5 class="font-weight-bold">Final Amount</h5>
+
+                                    </div>
+                                </div>
+
+                                <div class="multisteps-form__content">
+                                    
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="table-responsive">
+                                                <table class="table align-items-center mb-0">
+
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-uppercase  text-xxs font-weight-bolder opacity-7  text-start">Payment</th>
+                                                            <th class="text-uppercase  text-xxs font-weight-bolder opacity-7 text-end">Price</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <h6 class="text-start mb-0 text-xs ps-2">Amount</h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-0 text-xs ps-2 text-end">Rs.250</h6>
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+
+                                                            <td class="pt-0 mt-0">
+                                                                <input type="text" placeholder="Your code" class="form-control w-100 mt-0"/> 
+                                                             </td>
+                                                             <td class="text-end pt-3">
+                                                                <a href="" class="btn btn-primary">Apply</a>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td><h6 class="text-start mb-0 text-xs ps-2">Discount</h6></td>
+                                                            <td>
+                                                                <h6 class="mb-0 text-xs ps-2 text-end">Rs.0</h6>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td><h6 class="text-start mb-0 text-xs ps-2">Total</h6></td>
+                                                            <td>
+                                                                <h6 class="mb-0 text-xs ps-2 text-end">Rs.250</h6>
+                                                            </td>
+
+                                                        </tr>
+                                                       
+
+                                                    </tbody>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="button-row d-flex mt-3 mb-1">
+                                        <button class="btn bg-gradient-light mb-0 js-btn-prev" type="button" title="Prev">Prev</button>
+                                        <button class="btn btn-primary ms-auto mb-0 js-btn-next start-left" type="button" title="Next">Pay</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card multisteps-form__panel p-2 border-radius-xl bg-white" data-animation="FadeIn">
+                                <div class="row text-center mt-2">
+                                    <div class="col col-sm-10 col-md-10 col-xl-12">
+
+                                        <h5 class="font-weight-normal">Make Payment</h5>
+                                        <img class="img-fluid" src="/icons/qrcode_app.keeps.png" title="Scan via any UPI App" frameborder="0" />
+
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="button-row d-flex mt-4 col-12">
+                                        <button class="btn bg-gradient-light mb-0 js-btn-prev" type="button" title="Prev">Prev</button>
+                                        <button class="btn btn-primary toast-btn rounded ms-auto mb-0" type="button" data-target="successToast">Finish</button>
+                                    </div>
+                                </div>
+
+                                <div class="position-fixed bottom-1 end-1 z-index-2">
+                                    <div class="toast fade hide p-2 bg-success" role="alert" aria-live="assertive" id="successToast" aria-atomic="true">
+                                        <div class="toast-header border-0 bg-success ">
+                                            <i class="ni ni-check-bold text-white me-2"></i>
+                                            <span class="me-auto font-weight-bold text-white">Payment Successfull</span>
+                                            <small class="text-white">0 min ago</small>
+                                            <i class="fas fa-times text-md ms-3 cursor-pointer text-white" data-bs-dismiss="toast" aria-label="Close"></i>
+                                        </div>
+                                        <hr class="horizontal dark m-0">
+                                        <div class="toast-body bg-success text-white">
+                                            Payment has been done successfully.
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    bool showToast = false;
+
+
+    public void testclick()
+    {
+        showToast = true;
+    }
+
+
+}
